@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('home');
+  res.render('page2');
 };
