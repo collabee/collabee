@@ -23,32 +23,29 @@
 		<!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" /> -->
 
 		<style type="text/css">
-			.section {
+			.projectSection {
+				width: 100%;
 				border: 1px solid green;
 				height: 150px;
 				border-radius: 3px;
 				margin-bottom: 10px
 			}
-			.section:hover {
+			.projectSection:hover {
 				background-color: snow;
 			}
-			.section div {
+			.projectSection div {
 				margin: auto;
 				width: 400px;
 				text-align: center;
 				font-size: 40px;
 				color: darkcyan;
 			}
-			.nav-top {
-				background-color: blueviolet;
-				color: white;
-			}
 		</style>
 
 		<script src="bower_components/jquery/jquery.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
-				$(".section-new").click(function() {
+				$(".newProject").click(function() {
 					$("#my_model").modal();
 				});
 			});
@@ -87,24 +84,28 @@
 		</div>
 
 		<div class="container">
-			<div class="row" style="padding: 10px;background-color: aliceblue;">
-				<a href="/workspace">
-					<div class="col-sm-12 section">
-						이미 있는 프로젝트
+			
+			<div class="row">
+				<h3>My project</h3>
+				<div class="col-sm-12 section" style="padding: 10px;background-color: aliceblue;">
+					<a href="/workspace">
+						<div class="projectSection existProject">
+							이미 있는 프로젝트
+						</div>
+					</a>
+	
+					<div class="projectSection newProject">
+						<div style="margin-top: 20px;">
+							+
+						</div>
+						<div>
+							Create New Project
+						</div>
 					</div>
-				</a>
-
-				<div class="col-sm-12 section section-new">
-					<div style="margin-top: 20px;">
-						+
+	
+					<div class="projectSection">
+	
 					</div>
-					<div class="section-new">
-						Create New Project
-					</div>
-				</div>
-
-				<div class="col-sm-12 section">
-
 				</div>
 			</div>
 		</div>
