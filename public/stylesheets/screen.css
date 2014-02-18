@@ -1,12 +1,32 @@
-.tab-content-container {
-	padding: 10px;
+/* comment */
+
+a.comment {
+	font-size: 18px;
+	text-decoration: none;
 }
 
-.main-content {
-	position: relative;
-	margin-left: 20%;
+.comment-primary {
+	
 }
 
+.comment-info {
+	color: #772953;
+}
+
+.comment-success {
+	color: #38b44a;
+}
+
+.comment-warning {
+	color: #efb73e;
+}
+
+.comment-danger {
+	color: #df382c;
+}
+
+
+/* screen-app */
 .screen-app-background {
 	z-index: 1;
 	position: absolute;
@@ -22,6 +42,18 @@
 	width: 322px;
 	height: 569px;
 }
+
+/* tab */
+.tab-content-container {
+	padding: 40px;
+}
+
+/* full-height */
+.main-content {
+	position: relative;
+	margin-left: 20%;
+}
+
 
 .sub-content {
 	position: absolute;

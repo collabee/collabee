@@ -6,4 +6,8 @@ $(document).ready(function() {
 			$(this).append("top:" + top + ", left:" + left);
 		}
 	});
+	
+	$('#button-ui-component').on('click', function(e) {
+		$('.main-content').css('cursor', 'default');
+	});
 });
