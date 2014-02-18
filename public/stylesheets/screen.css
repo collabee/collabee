@@ -7,6 +7,20 @@
 	margin-left: 20%;
 }
 
+.screen-app-background {
+	z-index: 1;
+	position: relative;
+}
+
+.screen-app-image {
+	z-index: 2;
+	top: -12px;
+	left: 12px;
+	position: relative;
+	width: 320px;
+	height: 568px;
+}
+
 .sub-content {
 	position: absolute;
 	top: 0;
