@@ -9,16 +9,18 @@
 
 .screen-app-background {
 	z-index: 1;
-	position: relative;
+	position: absolute;
+	top: 1px;
+	left: 385px;
 }
 
 .screen-app-image {
 	z-index: 2;
-	top: -12px;
-	left: 12px;
-	position: relative;
-	width: 320px;
-	height: 568px;
+	top: 84px;
+	left: 472px;
+	position: absolute;
+	width: 322px;
+	height: 569px;
 }
 
 .sub-content {
