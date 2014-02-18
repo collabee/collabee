@@ -16,69 +16,112 @@
 		<!-- favicon.ico -->
 		<link rel="shortcut icon" href="/images/favicon.ico"/>
 		<!-- bower css zone -->
-		
+
 		<!-- custom css zone -->
 		<link rel="stylesheet" href="stylesheets/style.css" />
 		<link rel="stylesheet" href="stylesheets/bootstrap.custom.css" />
 		<!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" /> -->
-		
+
 		<style type="text/css">
-			.section { border:1px solid green;height:150px;border-radius: 3px;margin-bottom:10px }
-			.section:hover { background-color: snow; }
-			.section div { margin:auto;width: 400px;text-align: center;font-size: 40px;color: darkcyan; }
-			.nav-top { background-color: blueviolet;color: white; }
+			.section {
+				border: 1px solid green;
+				height: 150px;
+				border-radius: 3px;
+				margin-bottom: 10px
+			}
+			.section:hover {
+				background-color: snow;
+			}
+			.section div {
+				margin: auto;
+				width: 400px;
+				text-align: center;
+				font-size: 40px;
+				color: darkcyan;
+			}
+			.nav-top {
+				background-color: blueviolet;
+				color: white;
+			}
 		</style>
-		
+
 		<script src="bower_components/jquery/jquery.js"></script>
 		<script type="text/javascript">
-			$(document).ready(function(){
-				$(".section-new").click(function(){
-					$("#my_model").modal(); 
+			$(document).ready(function() {
+				$(".section-new").click(function() {
+					$("#my_model").modal();
 				});
-				
-				$("#m_close").click(function(){
+
+				$("#m_close").click(function() {
 					$.modal.close();
 				});
-			}); 
+			});
 		</script>
 	</head>
 
 	<body>
-		<header class="navbar navbar-static-top nav-top">
+		<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
-				<span class="navbar-brand">Collabee</span>
-			</div>
-		</header>
+				<div class="navbar-header">
+					<a href="../" class="navbar-brand">Collabee</a>
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="navbar-collapse collapse" id="navbar-main">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="/project">Project</a>
+						</li>
+						<li>
+							<a href="#">Explore</a>
+						</li>
+					</ul>
 
-		<div class="container">
-			<div class="row" style="padding: 10px;background-color: aliceblue;">
-				<div class="col-sm-12 section">
-					이미 있는 프로젝트
-				</div>
-				
-				<div class="col-sm-12 section section-new">
-					<div style="margin-top: 20px;">+</div>
-					<div class="section-new">Create New Project</div>
-				</div>
-				
-				<div class="col-sm-12 section">
-					
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="/">Logout</a>
+						</li>
+					</ul>
+
 				</div>
 			</div>
-
 		</div>
 
-		<!-- <footer>
-			<p>
-				&copy; Copyright by ansterd@nate.com
-			</p>
-		</footer> -->
-		
+		<div class="container">
+			<div class="bs-docs-section">
+
+				<div class="row" style="padding: 10px;background-color: aliceblue;">
+					<div class="col-sm-12 section">
+						<a href="/workspace">이미 있는 프로젝트</a>
+					</div>
+
+					<div class="col-sm-12 section section-new">
+						<div style="margin-top: 20px;">
+							+
+						</div>
+						<div class="section-new">
+							Create New Project
+						</div>
+					</div>
+
+					<div class="col-sm-12 section">
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
 		<div class="modal fade" id="my_model">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
 						<h4 class="modal-title">Create New Project</h4>
 					</div>
 					<div class="modal-body">
@@ -89,7 +132,7 @@
 									<input type="text" class="form-control" id="inputEmail3" placeholder="">
 								</div>
 							</div>
-							
+
 							<div class="form-group">
 								<label for="inputEmail3" class="col-sm-3 control-label">Project type</label>
 								<div class="col-sm-9">
@@ -100,7 +143,7 @@
 									</select>
 								</div>
 							</div>
-							
+
 							<div class="form-group">
 								<label for="inputProjectName" class="col-sm-3 control-label">Deadline</label>
 								<div class="col-sm-9">
@@ -108,25 +151,25 @@
 								</div>
 							</div>
 						</form>
-						
+
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							Close
+						</button>
 						<!-- <button type="button" class="btn btn-primary">Create</button> -->
 						<a href="/workspace" class="btn btn-primary" role="button">Create</a>
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->
-		
-	
-		
+
 		<!-- bower script zone -->
 		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 		<!-- dev script zone -->
 		<script src="http://localhost:35729/livereload.js"></script>
-		<!-- custom script zone -->	
+		<!-- custom script zone -->
 		<script src="javascripts/script.js"></script>
-	
+
 	</body>
 </html>

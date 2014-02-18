@@ -9,3 +9,11 @@
 .centered {
 	text-align: center;
 }
+
+.modal-dialog {
+    margin-top: 20%;
+}
+
+.modal-content {
+    margin-top: -20%;
+}
