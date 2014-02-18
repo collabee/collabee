@@ -32,14 +32,6 @@
 		<script src="bower_components/jqueryui/ui/jquery-ui.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
-				
-				$( ".draggable" ).draggable({
-						stop: function( event, ui ) {
-							var top = $(this).offset().top;
-							var left = $(this).offset().left;
-							$(this).append("top:" + top + ", left:" + left);
-						}
-				});
 			});
 		</script>
 		
@@ -72,9 +64,6 @@
 				</div>
 				<div class="tab-pane" id="comment">
 					<div class="tab-content-container">
-						<p>
-							comment contents
-						</p>
 					</div>
 				</div>
 			</div>
@@ -94,6 +83,10 @@
 		<script src="http://localhost:35729/livereload.js"></script>
 		<!-- custom script zone -->
 		<script src="javascripts/script.js"></script>
+		<script src="javascripts/ui-components.js"></script>
+		<script src="javascripts/comments.js"></script>
+		
+		
 	</body>
 </html>
 
