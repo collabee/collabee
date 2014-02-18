@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Project</title>
+		<meta name="description" content="">
+		<meta name="author" content="ansterd">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- favicon.ico -->
+		<link rel="shortcut icon" href="/images/favicon.ico"/>
+		<!-- bower css zone -->
+		
+		<!-- custom css zone -->
+		<link rel="stylesheet" href="stylesheets/style.css" />
+		<link rel="stylesheet" href="stylesheets/bootstrap.custom.css" />
+		<!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" /> -->
+		
+		<style type="text/css">
+			.section { border:1px solid green;height:150px;border-radius: 3px;margin-bottom:10px }
+			.section:hover { background-color: snow; }
+			.section div { margin:auto;width: 400px;text-align: center;font-size: 40px;color: darkcyan; }
+			.nav-top { background-color: blueviolet;color: white; }
+		</style>
+		
+		<script src="bower_components/jquery/jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".section-new").click(function(){
+					$("#my_model").modal(); 
+				});
+				
+				$("#m_close").click(function(){
+					$.modal.close();
+				});
+			}); 
+		</script>
+	</head>
+
+	<body>
+		<header class="navbar navbar-static-top nav-top">
+			<div class="container">
+				<span class="navbar-brand">Collabee</span>
+			</div>
+		</header>
+
+		<div class="container">
+			<div class="row" style="padding: 10px;background-color: aliceblue;">
+				<div class="col-sm-12 section">
+					이미 있는 프로젝트
+				</div>
+				
+				<div class="col-sm-12 section section-new">
+					<div style="margin-top: 20px;">+</div>
+					<div class="section-new">Create New Project</div>
+				</div>
+				
+				<div class="col-sm-12 section">
+					
+				</div>
+			</div>
+
+		</div>
+
+		<!-- <footer>
+			<p>
+				&copy; Copyright by ansterd@nate.com
+			</p>
+		</footer> -->
+		
+		<div class="modal fade" id="my_model">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">Create New Project</h4>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal" role="form">
+							<div class="form-group">
+								<label for="inputProjectName" class="col-sm-3 control-label">Project name</label>
+								<div class="col-sm-9">
+									<input type="text" class="form-control" id="inputEmail3" placeholder="">
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="inputEmail3" class="col-sm-3 control-label">Project type</label>
+								<div class="col-sm-9">
+									<select class="form-control">
+										<option>Desktop</option>
+										<option>Android</option>
+										<option>iOS</option>
+									</select>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="inputProjectName" class="col-sm-3 control-label">Deadline</label>
+								<div class="col-sm-9">
+									<input type="text" class="form-control" id="inputEmail3" placeholder="날짜 들어갈 예정">
+								</div>
+							</div>
+						</form>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<!-- <button type="button" class="btn btn-primary">Create</button> -->
+						<a href="#" class="btn btn-primary" role="button">Create</a>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		
+	
+		
+		<!-- bower script zone -->
+		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<!-- dev script zone -->
+		<script src="http://localhost:35729/livereload.js"></script>
+		<!-- custom script zone -->	
+		<script src="javascripts/script.js"></script>
+	
+	</body>
+</html>
