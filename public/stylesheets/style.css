@@ -11,9 +11,6 @@
 }
 
 .modal-dialog {
-    margin-top: 20%;
+    margin: 70px auto !important;
 }
 
-.modal-content {
-    margin-top: -20%;
-}
