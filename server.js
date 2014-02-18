@@ -11,8 +11,8 @@ var fs = require('fs');
 
 var app = express();
 var ejs = require('ejs');
-ejs.open = '{{';
-ejs.close = '}}';
+ejs.open = '{<{';
+ejs.close = '}>}';
 
 // all environments
 app.set('port', process.env.PORT || 3000);

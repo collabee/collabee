@@ -1,7 +1,11 @@
-body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.bs-docs-section {
+	margin-top: 8em;
 }
 
-a {
-  color: #00B7FF;
+.nav-tabs-right {
+	float: right !important;
+}
+
+.centered {
+	text-align: center;
 }
