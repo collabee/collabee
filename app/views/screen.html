@@ -19,44 +19,46 @@
 		<!-- custom css zone -->
 		<link rel="stylesheet" href="stylesheets/bootstrap.custom.css" />
 		<link rel="stylesheet" href="stylesheets/style.css" />
-
+		<link rel="stylesheet" href="stylesheets/screen.css" />
+		
+		<style>
+			html, body {
+				height: 100%;
+			}
+		</style>
 	</head>
 
 	<body>
-		<div class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container">
-				<div class="navbar-header">
-					<a href="../" class="navbar-brand">Collabee</a>
-					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
+		<div class="tabbable tabs-right sub-content screen-tab">
+			<ul class="nav nav-tabs full-height">
+				<li class="active">
+					<a href="#ui-component" data-toggle="tab">UI Components</a>
+				</li>
+				<li>
+					<a href="#comment" data-toggle="tab">Comments</a>
+				</li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane active" id="ui-component">
+					<div class="tab-content-container">
+						<p>
+							ui-component contents
+						</p>
+					</div>
 				</div>
-				<div class="navbar-collapse collapse" id="navbar-main">
-					<ul class="nav navbar-nav">
-						<li>
-							<a href="/project">Project</a>
-						</li>
-						<li>
-							<a href="#">Explore</a>
-						</li>
-					</ul>
-
-					<ul class="nav navbar-nav navbar-right">
-						<li>
-							<a href="/">Logout</a>
-						</li>
-					</ul>
-
+				<div class="tab-pane" id="comment">
+					<div class="tab-content-container">
+						<p>
+							comment contents
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
+		<!-- /tabs -->
 
-		<div class="container">
-			<div class="bs-docs-section">
-				<h3>Specific Screen</h3>	
-			</div>
+		<div class="main-content">
+
 		</div>
 
 		<!-- bower script zone -->
