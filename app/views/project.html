@@ -51,16 +51,12 @@
 				$(".section-new").click(function() {
 					$("#my_model").modal();
 				});
-
-				$("#m_close").click(function() {
-					$.modal.close();
-				});
 			});
 		</script>
 	</head>
 
 	<body>
-		<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar navbar-inverse navbar-static-top">
 			<div class="container">
 				<div class="navbar-header">
 					<a href="../" class="navbar-brand">Collabee</a>
@@ -91,27 +87,25 @@
 		</div>
 
 		<div class="container">
-			<div class="bs-docs-section">
-
-				<div class="row" style="padding: 10px;background-color: aliceblue;">
+			<div class="row" style="padding: 10px;background-color: aliceblue;">
+				<a href="/workspace">
 					<div class="col-sm-12 section">
-						<a href="/workspace">이미 있는 프로젝트</a>
+						이미 있는 프로젝트
 					</div>
+				</a>
 
-					<div class="col-sm-12 section section-new">
-						<div style="margin-top: 20px;">
-							+
-						</div>
-						<div class="section-new">
-							Create New Project
-						</div>
+				<div class="col-sm-12 section section-new">
+					<div style="margin-top: 20px;">
+						+
 					</div>
-
-					<div class="col-sm-12 section">
-
+					<div class="section-new">
+						Create New Project
 					</div>
 				</div>
 
+				<div class="col-sm-12 section">
+
+				</div>
 			</div>
 		</div>
 
@@ -158,7 +152,7 @@
 							Close
 						</button>
 						<!-- <button type="button" class="btn btn-primary">Create</button> -->
-						<a href="#" class="btn btn-primary" role="button">Create</a>
+						<a href="/workspace" class="btn btn-primary" role="button">Create</a>
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
