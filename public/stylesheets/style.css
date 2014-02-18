@@ -10,10 +10,10 @@
 	text-align: center;
 }
 
-.modal-dialog {
+.modal-dialog-center {
     margin-top: 20%;
 }
 
-.modal-content {
+.modal-content-center {
     margin-top: -20%;
 }
