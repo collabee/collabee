@@ -25,7 +25,25 @@
 			html, body {
 				height: 100%;
 			}
+			.ui-comp { width:100px; height:100px; border:solid 1px gray; background-color: beige;}
 		</style>
+		
+		<script src="bower_components/jquery/jquery.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				
+				$( ".draggable" ).draggable({
+						stop: function( event, ui ) {
+							var top = $(this).offset().top;
+							var left = $(this).offset().left;
+							$(this).append("top:" + top + ", left:" + left);
+						}
+				});
+			});
+		</script>
+		
+		
 	</head>
 
 	<body>
@@ -41,9 +59,15 @@
 			<div class="tab-content">
 				<div class="tab-pane active" id="ui-component">
 					<div class="tab-content-container">
-						<p>
-							ui-component contents
-						</p>
+						<div class="draggable ui-comp">
+							<p>우냐냐</p>
+						</div>
+						<div class="draggable ui-comp">
+							<p>으앙</p>
+						</div>
+						<div class="draggable ui-comp">
+							<p>집에가자</p>
+						</div>
 					</div>
 				</div>
 				<div class="tab-pane" id="comment">
@@ -62,7 +86,6 @@
 		</div>
 
 		<!-- bower script zone -->
-		<script src="bower_components/jquery/jquery.js"></script>
 		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 		<!-- dev script zone -->
 		<script src="http://localhost:35729/livereload.js"></script>
