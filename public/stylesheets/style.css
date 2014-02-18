@@ -5,3 +5,7 @@
 .nav-tabs-right {
 	float: right !important;
 }
+
+.centered {
+	text-align: center;
+}
