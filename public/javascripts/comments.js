@@ -27,7 +27,7 @@ $(document).ready(function() {
 	};
 
 	$('.comment').on('click', function(e) {
-		$('.main-content').css('cursor', 'crosshair');
+		$('.main-content').css('cursor', 'pointer');
 
 		window.toggledComment = $(e.target).text().replace(/ /g, '');
 

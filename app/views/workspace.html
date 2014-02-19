@@ -16,7 +16,8 @@
 		<!-- favicon.ico -->
 		<link rel="shortcut icon" href="/images/favicon.ico"/>
 		<!-- bower css zone -->
-		<link rel="stylesheet" href="bower_components/bootstrap-switch/build/css/bootstrap3/bootstrap-switch.min.css" />
+		<link rel="stylesheet" href="bower_components/bootstrap-switch/build/css/bootstrap3/bootstrap-switch.css" />
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
 		<!-- custom css zone -->
 		<link rel="stylesheet" href="stylesheets/bootstrap.custom.css" />
 		<link rel="stylesheet" href="stylesheets/style.css" />
@@ -82,33 +83,29 @@
 							</li>
 						</ul>
 						<div id="workTabContents" class="tab-content">
-							<div class="tab-pane fade in" id="tab-contents-sketch">
-								<p>
-									Sketch
-								</p>
-							</div>
-							<div class="tab-pane fade in" id="tab-contents-design">
-								<p>
-									Design
-								</p>
-							</div>
 							<div class="tab-pane fade" id="co-work">
 								<p>
 									co-work contents
 								</p>
 							</div>
 							<div class="tab-pane fade active in" id="work">
-								<div class="row">
-									<div class="pull-left">
-										<a class="btn btn-danger"> New Screen </a>
-										<span class="text-screen-number">24 Screens</span>
+								<div id="work-contents-area" class="tab-content-container">
+									<div class="row work-tab-topbar">
+										<div class="pull-left">
+										</div>
+										<div class="pull-right">
+											<input id="mode-switch" class="work-switch" id="dimension-switch" type="checkbox" checked>
+										</div>
 									</div>
-									<div class="pull-right">
-										<input class="work-switch" type="checkbox" name="my-checkbox" checked>
+									<div class="row work-second-tab-bar">
+										<div class="pull-letf">
+											<span class="text-screen-number">24 Screens</span>
+										</div>
+										<div class="pull-right">
+											<a class="btn-new-screen btn btn-danger">New Screen</a>
+										</div>
 									</div>
-								</div>
-								<div class="row">
-									work contents
+									<div id="mode-contents-area" class="row"></div>
 								</div>
 							</div>
 						</div>
@@ -119,8 +116,87 @@
 			</div>
 		</div>
 
+		<!-- script zone -->
+		<script type="text/template" id="tmpl_sketchArea">
+			<div class="row">
+
+			<div class="col-sm-3">
+			<div class="row">
+			<div class="form-inline centered">
+			<select class="form-control select-layer" style="width: 150px;">
+			<option>Login Page</option>
+			<option>Service Page</option>
+			</select>
+			<a class="btn btn-danger"><i class="icon-new-screen fa fa-1x fa-plus"></i></a>
+			</div>
+			</div>
+			<div class="row ">
+			<div class="div-centered image-wrapper shadow-10">
+
+			</div>
+			</div>
+			</div>
+
+			<div class="col-sm-3">
+			<div class="row">
+			<div class="form-inline centered">
+			<select class="form-control select-layer" style="width: 150px;">
+			<option>Login Page</option>
+			<option>Service Page</option>
+			</select>
+			<a class="btn btn-danger"><i class="icon-new-screen fa fa-1x fa-plus"></i></a>
+			</div>
+			</div>
+			<div class="row ">
+			<div class="div-centered image-wrapper shadow-10">
+
+			</div>
+			</div>
+			</div>
+			<div class="col-sm-3">
+			<div class="row">
+			<div class="form-inline centered">
+			<select class="form-control select-layer" style="width: 150px;">
+			<option>Login Page</option>
+			<option>Service Page</option>
+			</select>
+			<a class="btn btn-danger"><i class="icon-new-screen fa fa-1x fa-plus"></i></a>
+			</div>
+			</div>
+			<div class="row ">
+			<div class="div-centered image-wrapper shadow-10">
+
+			</div>
+			</div>
+			</div>
+			<div class="col-sm-3">
+			<div class="row">
+			<div class="form-inline centered">
+			<select class="form-control select-layer" style="width: 150px;">
+			<option>Login Page</option>
+			<option>Service Page</option>
+			</select>
+			<a class="btn btn-danger"><i class="icon-new-screen fa fa-1x fa-plus"></i></a>
+			</div>
+			</div>
+			<div class="row ">
+			<div class="div-centered image-wrapper shadow-10">
+
+			</div>
+			</div>
+			</div>
+
+			</div>
+		</script>
+		<script type="text/template" id="tmpl_designArea">
+			<div>
+			design area
+			</div>
+		</script>
+
 		<!-- bower script zone -->
 		<script src="bower_components/jquery/jquery.js"></script>
+		<script src="bower_components/underscore/underscore.js"></script>
 		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 		<script src="bower_components/bootstrap-switch/build/js/bootstrap-switch.min.js"></script>
 		<!-- dev script zone -->
