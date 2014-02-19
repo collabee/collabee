@@ -1,3 +1,9 @@
+/* footer */
+
+.screen-footer {
+	
+}
+
 /* comment */
 
 .comment-panel {
@@ -13,7 +19,7 @@ a.comment {
 }
 
 .comment-primary {
-	
+
 }
 
 .comment-info {
@@ -36,26 +42,36 @@ a.comment {
 	width: 280px;
 }
 
-
-
-
 /* screen-app */
 .screen-app-background {
 	z-index: 1;
-	position: absolute;
+	/*position: absolute;
 	top: 110px;
-	left: 170px;
+	left: 170px;*/
 	width: 350px;
 	height: 576px;
 }
 
 .screen-app-image {
 	z-index: 2;
-	top: 167px;
-	left: 230px;
-	position: absolute;
+	/*top: 167px;
+	left: 230px;*/
+	/*position: absolute;*/
 	width: 230px;
 	height: 420px;
+}
+
+.screen-toolbox {
+	margin-top: 30px;
+	margin-bottom: 70px;
+}
+
+.screen-button {
+	margin: 5px;
+}
+
+.screen-button-group {
+	margin-top: 10px;
 }
 
 /* tab */
@@ -69,7 +85,6 @@ a.comment {
 	position: relative;
 	margin-left: 380px;
 }
-
 
 .sub-content {
 	position: absolute;
@@ -85,8 +100,8 @@ a.comment {
 	height: 100%;
 }
 
-.tab-content { 
-	width:380px;
+.tab-content {
+	width: 380px;
 	background: #181a2d;
 }
 
@@ -181,8 +196,8 @@ a.comment {
 
 .tabs-right > .nav-tabs .active > a, .tabs-right > .nav-tabs .active > a:hover, .tabs-right > .nav-tabs .active > a:focus {
 	/* border-color: #ddd #ddd #ddd transparent;
-	*border-left-color: #ffffff; */
-	border:0px;
+	 *border-left-color: #ffffff; */
+	border: 0px;
 	background-color: transparent;
 }
 
@@ -202,9 +217,6 @@ a.comment {
 	background-image: url('/images/screen/tap_uicomp_sel.png');
 }
 
-
-
-
 /* UI Components */
 html, body {
 	height: 100%;
@@ -215,7 +227,7 @@ html, body {
 	z-index: 100;
 }
 
-.ui-comp-group{
+.ui-comp-group {
 	margin-bottom: 10px;
 	width: 100%;
 	height: 100px;
@@ -228,36 +240,35 @@ html, body {
 	z-index: 5;
 }
 
-.ui-comp-list{
+.ui-comp-list {
 	list-style: none;
 	padding-left: 0;
 }
 
-.ui-comp-list li{
-	float:left;
+.ui-comp-list li {
+	float: left;
 }
 
-#dropzone{
+#dropzone {
 	border: dotted 2px gray;
-	width:250px;
-	height:150px;
+	width: 250px;
+	height: 150px;
 }
 
-.up-comp-list{
+.up-comp-list {
 	list-style: none;
 	padding-left: 0;
 }
-.up-comp-list li{
-	float:left;
+.up-comp-list li {
+	float: left;
 }
 
-
-#toolbox{
+#toolbox {
 	background-image: url('/images/screen/tool_nor.png');
-	width:482px;
+	width: 482px;
 	height: 62px;
-	position: absolute;
+	/*position: absolute;
 	top: 20px;
-	left: 100px;	
+	left: 100px;*/
 }
 

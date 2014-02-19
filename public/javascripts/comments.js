@@ -10,7 +10,48 @@ function Comment(id, name, text, left, top) {
 	return this;
 };
 
+function toolboxInit() {
+	window.toolboxToggled = false;
+	var toolbox = $('.screen-toolbox img');
+	
+	$(toolbox).on('click', function(e) {
+		if (window.toolboxToggled) {
+			$(toolbox).attr('src', 'images/screen/tool_nor.png');
+		} else {
+			$(toolbox).attr('src', 'images/screen/tool_sel.png');
+		}
+		
+		window.toolboxToggled = ~window.toolboxToggled;
+	});};
+
+function appImageInit() {
+	
+	var src = "images/sample-screen1.png";
+	var image = $("<img src='" + src + "' />");
+	
+	var iphone = $('.screen-app-background');
+	
+	console.log($(iphone).offset());
+	
+	$(image).css({
+		position: "absolute",
+		left: $(iphone).offset().left + 61,
+		top: $(iphone).offset().top + 59,
+		width: 226,
+		height: 404,
+		"z-index" : 2,
+		"border-radius" : 5
+	}).appendTo('body');
+};
+
 $(document).ready(function() {
+	// image ready
+	appImageInit();
+	
+	// toolbox
+	toolboxInit();
+	
+	// comment
 	var commentList = [];
 
 	var user = {
@@ -18,22 +59,24 @@ $(document).ready(function() {
 	};
 
 	var template = _.template($('#tmpl_commentWritePanel').html());
-
 	var iconMap = {
-		Good : '<i class="comment-icon fa fa-check-square margin-right-10">',
-		Cancel : '<i class="comment-icon fa fa-mail-reply margin-right-10">',
-		Review : '<i class="comment-icon fa fa-search margin-right-10">',
-		Warning : '<i class="comment-icon fa fa-warning margin-right-10">'
+		comment : '<img src="images/screen/ic_comment_1.png" class="comment-icon margin-right-10">',
+		loveit : '<img src="images/screen/ic_comment_2.png" class="comment-icon margin-right-10">',
+		problem : '<img src="images/screen/ic_comment_3.png" class="comment-icon margin-right-10">',
+		idea : '<img src="images/screen/ic_comment_4.png" class="comment-icon margin-right-10">',
 	};
 
 	$('.comment').on('click', function(e) {
 		$('.main-content').css('cursor', 'pointer');
-
-		window.toggledComment = $(e.target).text().replace(/ /g, '');
-
-		console.log("window.toggledComment : " + window.toggledComment);
+		
+		window.toggledComment = ($(e.target).attr('comment-type'));
+		
+		
 		$('.main-content').on('click', function(e) {
 			var comment = iconMap[window.toggledComment];
+			
+
+			
 			window.commentTop = e.pageY;
 			window.commentLeft = e.pageX;
 
@@ -62,7 +105,7 @@ $(document).ready(function() {
 
 			$(html).css({
 				position : "absolute",
-				left : e.pageX + 30,
+				left : e.pageX + 50,
 				top : e.pageY,
 				"z-index" : 3
 			}).appendTo('body');
@@ -71,7 +114,7 @@ $(document).ready(function() {
 				window.commentWritten = true;
 
 				var commentModel = new Comment(commentList.length, user.name, $('#comment-text').val(), // text
-				window.commentLeft + 30, window.commentTop);
+				window.commentLeft + 50, window.commentTop);
 
 				console.log(commentModel);
 				commentList.push(commentModel);

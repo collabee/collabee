@@ -23,7 +23,6 @@
 		<link rel="stylesheet" href="stylesheets/style.css" />
 		<link rel="stylesheet" href="stylesheets/screen.css" />
 		<style>
-			
 		</style>
 
 	</head>
@@ -42,12 +41,18 @@
 				<div class="tab-pane active" id="ui-component">
 					<div class="tab-content-container">
 						<h4>UI Component</h4>
-						<p>open</p>
+						<p>
+							open
+						</p>
 						<div class="ui-buttons">
-							<button type="button" id="setUiWire" class="btn btn-default btn-sm">Wireframe</button>
-							<button type="button" id="setUiUp" class="btn btn-primary btn-sm">Upload</button>
+							<button type="button" id="setUiWire" class="btn btn-default btn-sm">
+								Wireframe
+							</button>
+							<button type="button" id="setUiUp" class="btn btn-primary btn-sm">
+								Upload
+							</button>
 						</div>
-						
+
 						<div class="ui-comp-group" style="display:block;">
 							<ul class="ui-comp-list">
 								<li class="draggable ui-comp">
@@ -64,33 +69,42 @@
 								</li>
 							</ul>
 						</div>
-						
+
 						<div class="ui-upload-group" style="display:none;padding-top:10px;">
 							<!-- <div class="upload-zone" ondragenter="onDragEnter(event)"  ondragover="onDragOver(event)"
-       						ondrop="onDrop(event)">
-								Drag & Drop
+							ondrop="onDrop(event)">
+							Drag & Drop
 							</div> -->
-							 <section>
+							<section>
 								<form>
 									<div class="options" style="display:none;">
-										<label for="width">Width:</label><input id="width" type="number" name="width" value="100">
-										<label for="height">Height:</label><input id="height"  type="number"  name="height" value="100">
-										<input type="checkbox" id="crop"><label for="crop">crop thumbnail</label>
-										<span class="crop"><label for="bg">background:</label><input type="text" value="white" id="bg"></span>
+										<label for="width">Width:</label>
+										<input id="width" type="number" name="width" value="100">
+										<label for="height">Height:</label>
+										<input id="height"  type="number"  name="height" value="100">
+										<input type="checkbox" id="crop">
+										<label for="crop">crop thumbnail</label>
+										<span class="crop"><label for="bg">background:</label>
+											<input type="text" value="white" id="bg">
+										</span>
 										<input type="checkbox" id="jpeg">
 										<label for="jpeg">JPG</label>
 										<span class="jpeg"><label for="quality">Quality</label>
-										<input type="number" max="100" min="0" value="50" id="quality"> %</span>
+											<input type="number" max="100" min="0" value="50" id="quality">
+											%</span>
 									</div>
-									<div id="dropzone" class="resizable">This demo needs a canvas and FileReader capable browser
+									<div id="dropzone" class="resizable">
+										This demo needs a canvas and FileReader capable browser
 									</div>
 								</form>
 								<output>
-									<p>Upload Files</p>
+									<p>
+										Upload Files
+									</p>
 									<img src="https://pbs.twimg.com/media/Bg4dzUjCIAAMrZ6.jpg" title="26.57 KB" id="yuna" class="draggable" style="width:100px;height:100px;">
 								</output>
 							</section>
-							
+
 							<ul class="up-comp-list">
 								<li class="draggable ui-comp">
 									<span class="glyphicon glyphicon-asterisk"></span>
@@ -113,27 +127,19 @@
 						<h4>Comment Category</h4>
 						<br/>
 						<div>
-							<a href="#" class="comment comment-success"> <!-- <i class="fa fa-check-square margin-right-10"></i>Good -->
-								<img src="/images/screen/btn_comment_1.png">
-							</a>
+							<a href="#" class="comment comment-success" > <!-- <i class="fa fa-check-square margin-right-10"></i>Good --> <img src="/images/screen/btn_comment_1.png" comment-type="comment"> </a>
 						</div>
 						<br/>
 						<div>
-							<a href="#" class="comment comment-primary"> <!-- <i class="fa fa-mail-reply margin-right-10"></i>Cancel -->
-								<img src="/images/screen/btn_comment_2.png">
-							</a>
+							<a href="#" class="comment comment-primary" > <!-- <i class="fa fa-mail-reply margin-right-10"></i>Cancel --> <img src="/images/screen/btn_comment_2.png" comment-type="loveit"> </a>
 						</div>
 						<br/>
 						<div>
-							<a href="#" class="comment comment-info"> <!-- <i class="fa fa-search margin-right-10"></i>Review -->
-								<img src="/images/screen/btn_comment_3.png">
-							</a>
+							<a href="#" class="comment comment-info" > <!-- <i class="fa fa-search margin-right-10"></i>Review --> <img src="/images/screen/btn_comment_3.png" comment-type="problem"> </a>
 						</div>
 						<br/>
 						<div>
-							<a href="#" class="comment comment-warning"> <!-- <i class="fa fa-warning margin-right-10"></i>Warning -->
-								<img src="/images/screen/btn_comment_4.png">
-							</a>
+							<a href="#" class="comment comment-warning" > <!-- <i class="fa fa-warning margin-right-10"></i>Warning --> <img src="/images/screen/btn_comment_4.png" comment-type="idea"> </a>
 						</div>
 						<br/>
 					</div>
@@ -142,23 +148,23 @@
 		</div>
 		<!-- /tabs -->
 
-		<div class="main-content full-height">
-			<div class="centered full-height droppable">
-				<img class="screen-app-background" src="images/iphone-portrait.png"/>
-				<img class="screen-app-image" src="images/sample-screen1.png"/>
+		<div class="main-content full-height ">
+			<div class="full-height droppable ">
+				<!-- <div id="toolbox"></div> -->
+				<div class="row screen-toolbox centered">
+					<img class="" src="images/screen/tool_nor.png"/>
+				</div>
+				<div class="row centered">
+					<img class="screen-app-background" src="images/iphone-portrait.png"/>
+					<!-- <img class="screen-app-image" src="images/sample-screen1.png"/> -->
+				</div>
+				<div class="row centered screen-button-group">
+					<a class="btn btn-success screen-button">Done</a>
+					<a class="btn btn-primary screen-button">Share</a>
+				</div>
 			</div>
-			<!-- <div class="" style="border:2px dotted red;width: 322px;height: 300px;z-index:10;position: absolute;top: 0px;left: 407px;"></div> -->
-			<div id="toolbox">
-				<!-- <div id="id" style="width:50px;height:50px;background:yellow;"></div> -->
-			</div>
-			
+
 		</div>
-		<div class="footer" style="background: #818181;height: 80px;position: absolute;width: 100%;bottom: 0px;">
-  			<div style="width: 324px;height: 80px;background: #181a2d;float: left;"></div>
-  			<button type="button" id="setUiWire" class="btn btn-default">Wireframe</button>
-  			<button type="button" id="setUiWire" class="btn btn-default">Wireframe</button>
-		</div>
-		
 
 		<!-- pandel zone -->
 		<script type="text/template" id="tmpl_commentWritePanel">
