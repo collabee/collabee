@@ -76,15 +76,15 @@
 					<br/>
 					<div class="bs-example">
 						<ul class="nav nav-tabs" style="margin-bottom: 15px;">
-							<li class="">
+							<li class="active">
 								<a href="#work" data-toggle="tab">Work</a>
 							</li>
-							<li class="active">
+							<li class="">
 								<a href="#timeline" data-toggle="tab">Timeline</a>
 							</li>
 						</ul>
 						<div id="workTabContents" class="tab-content">
-							<div class="tab-pane fade active in timeline-contents-area" id="timeline">
+							<div class="tab-pane fade timeline-contents-area" id="timeline">
 								<div class="tab-content-container">
 									<div class="row timeline-tab-bar">
 										<form class="form-inline" role="form">
@@ -120,7 +120,7 @@
 									<div class="row timeline-activity-area">
 										<div class="col-lg-5 timeline-activity-left centered">
 											left-activities
-										</div>
+										</div>	
 										<div class="col-lg-2 timeline-activity-center centered">
 											<div class="vertical-line">
 												<p>
@@ -135,7 +135,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="tab-pane fade" id="work">
+							<div class="tab-pane fade active in" id="work">
 								<div id="work-contents-area" class="tab-content-container">
 									<div class="row work-tab-topbar">
 										<div class="pull-left"></div>
@@ -175,8 +175,9 @@
 			</span>
 			</div>
 			</div>
-			<div class="row">
-			<div class="div-centered image-wrapper">
+			<div class="row row-image">
+			<div class="div-centered image-wrapper centered">
+				<img src="<%= screen.imageList[imageId].url %>"/ class="" / accesskey="">
 			</div>
 			</div>
 			<div class="row centered">
@@ -204,8 +205,9 @@
 			</span>
 			</div>
 			</div>
-			<div class="row ">
-			<div class="div-centered image-wrapper">
+			<div class="row row-image">
+			<div class="div-centered image-wrapper centered">
+				<img src="<%= screen.imageList[0].url %>"/ class="" / accesskey="">
 			</div>
 			</div>
 			<div class="row centered">
@@ -218,38 +220,6 @@
 			</div>
 		</script>
 
-		<script type="text/template" id="tmpl_designArea">
-			<div class="mode-area">
-			<% _.each(screenList, function(screen) { %>
-			<div class="col-sm-3 screen" screen-id="<%= screen.id %>">
-			<div class="row">
-			<div class="form-inline image-selector">
-			<select class="form-control select-layer" style="width: 100px;">
-			<% _.each(screen.imageList, function(image) { %>
-			<option image-id="<%= image.id %>"><%= image.name %></option>
-			<% }) %>
-			</select>
-			<a class="btn btn-danger image-add-button"><i class="icon-new-screen fa fa-1x fa-plus"></i></a>
-			<a class="btn btn-danger image-delete-button"><i class="icon-new-screen fa fa-1x fa-minus"></i></a>
-			<span class="screen-empty-button">
-			</span>
-			</div>
-			</div>
-			<div class="row ">
-			<div class="div-centered image-wrapper">
-			</div>
-			</div>
-			<div class="row centered">
-			<p class="screen-name">
-			<%= screen.name %>
-			</p>
-			</div>
-			</div>
-			<% }) %>
-			</div>
-		</script>
-
-		<!-- modal zone -->
 		<!-- modal zone -->
 		<div class="modal fade" id="modal-new-screen">
 			<div class="modal-dialog modal-dialog-center">

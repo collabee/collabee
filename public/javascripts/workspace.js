@@ -11,16 +11,47 @@ function Screen(id, imageList, name) {
 	this.name = name;
 };
 
+function imageChanged() {
+	
+	var storageMap = {
+		sketch : window.sketchScreens,
+		design : window.designScreens
+	};
+
+
+	$('select').off();
+	$('select').change(function(e) {
+		var screen = $(this).closest('.screen');
+		imageId = $('select option:selected', screen).attr('image-id');
+		screenId = $(this).closest('.screen').attr('screen-id');
+		
+		var screen = $('.screen[screen-id="' + screenId + '"]');
+		var img = $($($(screen).children()[1]).children()).children();
+		
+		
+		var storage = storageMap[window.workMode];
+		var result = _.find(storage[screenId].imageList, function(image) {
+			return (image.id == imageId);
+		});
+		
+		console.log(result.url);
+		
+		$(img).attr('src', result.url);
+		
+		// updateScreenView(screenId, imageId);
+	});
+};
+
 function createDummySketchs() {
 	var screens = [];
 	var imageList1 = [];
-	imageList1.push(new Image(imageList1.length, 'layer 1', 'url1'));
-	imageList1.push(new Image(imageList1.length, 'layer 2', 'url2'));
-	imageList1.push(new Image(imageList1.length, 'layer 3', 'url3'));
+	imageList1.push(new Image(0, 'layer 1', 'images/image1.jpg'));
+	imageList1.push(new Image(1, 'layer 2', 'images/image1-2.jpg'));
+	imageList1.push(new Image(2, 'layer 3', 'images/image1.jpg'));
 
 	var imageList2 = [];
-	imageList2.push(new Image(imageList1.length, 'layer 1', 'url1'));
-	imageList2.push(new Image(imageList1.length, 'layer 2', 'url2'));
+	imageList2.push(new Image(0, 'layer 1', 'images/image1.jpg'));
+	imageList2.push(new Image(1, 'layer 2', 'images/image1-2.jpg'));
 
 	screens.push(new Screen(screens.length, imageList1, 'main'));
 	screens[0].imageCount = 3;
@@ -89,7 +120,9 @@ function imageButtonInit() {
 	});
 };
 
-function updateScreenView(screenId) {
+function updateScreenView(screenId, imageId) {
+
+	var imageIndex = imageId || 0;
 
 	var templateMap = {
 		sketch : _.template($('#tmpl_screen').html()),
@@ -107,17 +140,24 @@ function updateScreenView(screenId) {
 	var target = '[screen-id="' + screenId + '"]';
 
 	$(target).replaceWith(template({
-		screen : storage[screenId]
+		screen : storage[screenId],
+		imageId : imageIndex
 	}));
 
 	imageButtonInit();
+	imageChanged();
 
 };
 
-$(document).ready(function() {
-	
-	// global storage for mode-contents : screens
+function getScreenContextMenu() {
+	$('.image-wrapper').hover(function(e) {
+		console.log(1);
+	});
+};
 
+$(document).ready(function() {
+
+	// global storage for mode-contents : screens
 	window.sketchCount = 0;
 	window.designCount = 0;
 	window.sketchScreens = createDummySketchs();
@@ -129,22 +169,21 @@ $(document).ready(function() {
 	// new screen
 	$('.btn-new-screen').on('click', function(e) {
 		// get screen name from input
-		
+
 		var name = $('input', '#modal-new-screen').val() || 'screen' + window.designCount;
 		console.log(name);
-		
+
 		// make new sketch screen
 		var imageList = [];
 		var screen = new Screen(window.sketchCount, imageList, name);
 		imageList.push(new Image(screen.imageCount, 'layer ' + (screen.imageCount + 1), ''));
 		screen.imageCount++;
-		
+
 		// make new design creen
 		var imageList2 = [];
 		var designScreen = new Screen(window.designCount, imageList2, name);
 		imageList2.push(new Image(designScreen.imageCount, 'layer ' + (designScreen.imageCount + 1), ''));
 		designScreen.imageCount++;
-		
 
 		// var targetRow = $('.mode-area > .row:last-child');
 		var targetRow = $('.mode-area');
@@ -153,6 +192,9 @@ $(document).ready(function() {
 		$(targetRow).append(template({
 			screen : screen
 		}));
+
+		getScreenContextMenu();
+
 		sketchScreens.push(screen);
 		designScreens.push(designScreen);
 		window.sketchCount++;
@@ -160,10 +202,11 @@ $(document).ready(function() {
 		$('input', '#modal-new-screen').val('');
 
 		imageButtonInit();
+		imageChanged();
 	});
 
 	// tab contents initializing
-	var designTemplate = _.template($('#tmpl_designArea').html());
+	var designTemplate = _.template($('#tmpl_sketchArea').html());
 	var sketchTemplate = _.template($('#tmpl_sketchArea').html());
 
 	var target = '#mode-contents-area';
@@ -173,6 +216,7 @@ $(document).ready(function() {
 		screenList : sketchScreens
 	}));
 	imageButtonInit();
+	imageChanged();
 
 	//bootstrap switch
 	switchInitialize(sketchScreens, designScreens);
@@ -190,7 +234,7 @@ function switchInitialize(sketchScreens, designScreens) {
 	});
 
 	// switch event collback
-	var designTemplate = _.template($('#tmpl_designArea').html());
+	var designTemplate = _.template($('#tmpl_sketchArea').html());
 	var sketchTemplate = _.template($('#tmpl_sketchArea').html());
 
 	var target = '#mode-contents-area';
@@ -236,6 +280,7 @@ function switchInitialize(sketchScreens, designScreens) {
 			screenList : storageMap[modeState]
 		}));
 		imageButtonInit();
+		imageChanged();
 	});
 
 };

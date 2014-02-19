@@ -83,13 +83,17 @@
 
 /* image */
 
+.image-wrapper img {
+	margin-top: 4px;
+}
+
 .image-selector {
 	text-align: center;
 }
 
 .image-wrapper {
 	width: 200px;
-	height: 337px;
+	height: 348px;
 	background-color: #f5f5f5;
 	margin-top: 10px;
 	/* Opera */
