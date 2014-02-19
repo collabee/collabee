@@ -1,3 +1,5 @@
+/* tab bar */
+
 .work-tab-topbar {
 	margin-bottom: 25px;
 }
@@ -6,9 +8,12 @@
 	margin-bottom: 15px;
 }
 
+/* in second-tab-bar */
+
 .text-screen-number {
 	font-size: 25px;
 	padding-right: 30px;
+	padding-left: 15px;
 }
 
 .btn-new-screen {
@@ -23,22 +28,34 @@
 .has-switch span.switch-right {
 	color: #fff;
 	background: #5c2040;
-	font-size: 15px;
+	font-size: 16px;
 }
 .has-switch span.switch-primary, .has-switch span.switch-left {
 	color: #fff;
 	background: #dd4814;
-	font-size: 15px;
-}
-
-.has-switch span.switch-left {
-
+	font-size: 16px;
 }
 
 .select-layer {
 }
 
+/* screen */
+
+.screen-row {
+	margin-bottom: 60px;
+}
+
+/* image */
+
+.image-selector {
+	text-align: center;
+}
+
 .image-wrapper {
+	width: 200px;
+	height: 329px;
+	background-color: #f5f5f5;
+	margin-top: 10px;
 	/* Opera */
 	box-shadow: 10px 10px 10px silver;
 	/* Firefox */
@@ -51,6 +68,14 @@
 
 .image-wrapper:hover {
 	border: solid 2px #5c2040;
+	/* Opera */
+	box-shadow: 0px 0px 0px silver;
+	/* Firefox */
+	-moz-box-shadow: 0px 0px 0px silver;
+	/* Safiri, Chrome */
+	-webkit-box-shadow: 0px 0px 0px silver;
+	/* IE */
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=silver,direction=0, strength=0);
 }
 
 #mode-contents-area {
