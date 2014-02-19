@@ -1,7 +1,7 @@
 /* footer */
 
 .screen-footer {
-	
+
 }
 
 /* comment */
@@ -46,8 +46,8 @@ a.comment {
 .screen-app-background {
 	z-index: 1;
 	/*position: absolute;
-	top: 110px;
-	left: 170px;*/
+	 top: 110px;
+	 left: 170px;*/
 	width: 350px;
 	height: 576px;
 }
@@ -55,7 +55,7 @@ a.comment {
 .screen-app-image {
 	z-index: 2;
 	/*top: 167px;
-	left: 230px;*/
+	 left: 230px;*/
 	/*position: absolute;*/
 	width: 230px;
 	height: 420px;
@@ -178,7 +178,7 @@ a.comment {
 
 .tabs-right > .nav-tabs {
 	float: right;
-	margin-left: 19px;
+	/*margin-left: 19px;*/
 	border-left: 1px solid #ddd;
 	background: #f9f9f9;
 }
@@ -190,14 +190,23 @@ a.comment {
 	border-radius: 0 4px 4px 0;
 }
 
+.tabs-right > .nav-tabs > li > a:hover {
+	border-left: 0px;
+	border-right-color: #f9f9f9;
+	border-bottom-color: #f9f9f9;
+	border-top-color: #f9f9f9;
+	background-color: transparent;
+}
+
 .tabs-right > .nav-tabs > li > a:hover, .tabs-right > .nav-tabs > li > a:focus {
 	border-color: #eeeeee #eeeeee #eeeeee #dddddd;
 }
 
 .tabs-right > .nav-tabs .active > a, .tabs-right > .nav-tabs .active > a:hover, .tabs-right > .nav-tabs .active > a:focus {
-	/* border-color: #ddd #ddd #ddd transparent;
-	 *border-left-color: #ffffff; */
-	border: 0px;
+	border-left: 0px;
+	border-right-color: #f9f9f9;
+	border-bottom-color: #f9f9f9;
+	border-top-color: #f9f9f9;
 	background-color: transparent;
 }
 
@@ -268,7 +277,7 @@ html, body {
 	width: 482px;
 	height: 62px;
 	/*position: absolute;
-	top: 20px;
-	left: 100px;*/
+	 top: 20px;
+	 left: 100px;*/
 }
 

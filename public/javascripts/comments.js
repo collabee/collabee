@@ -31,8 +31,6 @@ function appImageInit() {
 	
 	var iphone = $('.screen-app-background');
 	
-	console.log($(iphone).offset());
-	
 	$(image).css({
 		position: "absolute",
 		left: $(iphone).offset().left + 61,
@@ -137,6 +135,7 @@ $(document).ready(function() {
 						"z-index" : 3
 					}).appendTo('body');
 					
+					$('#read-comment-btn-close').off();
 					$('#read-comment-btn-close').on('click', function(e) {
 						$(this).parents('.panel').remove();
 					});
