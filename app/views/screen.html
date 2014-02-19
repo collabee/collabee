@@ -16,6 +16,7 @@
 		<!-- favicon.ico -->
 		<link rel="shortcut icon" href="/images/favicon.ico"/>
 		<!-- bower css zone -->
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
 		<!-- custom css zone -->
 		<link rel="stylesheet" href="stylesheets/bootstrap.custom.css" />
 		<link rel="stylesheet" href="stylesheets/style.css" />
@@ -25,60 +26,81 @@
 			html, body {
 				height: 100%;
 			}
-			.ui-comp { width:100px; height:100px; border:solid 1px gray; background-color: beige;}
+			.ui-comp {
+				width: 100px;
+				height: 100px;
+				border: solid 1px gray;
+				background-color: beige;
+			}
 		</style>
-		
-		<script src="bower_components/jquery/jquery.js"></script>
-		<script src="bower_components/jqueryui/ui/jquery-ui.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-			});
-		</script>
-		
-		
+
 	</head>
 
 	<body>
 		<div class="tabbable tabs-right sub-content screen-tab">
 			<ul class="nav nav-tabs full-height">
 				<li class="active">
-					<a href="#ui-component" data-toggle="tab">UI Components</a>
+					<a id="button-ui-component" href="#ui-component" data-toggle="tab">UI Components</a>
 				</li>
 				<li>
-					<a href="#comment" data-toggle="tab">Comments</a>
+					<a id="button-comment" href="#comment" data-toggle="tab">Comments</a>
 				</li>
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane active" id="ui-component">
 					<div class="tab-content-container">
 						<div class="draggable ui-comp">
-							<p>우냐냐</p>
+							<p>
+								우냐냐
+							</p>
 						</div>
 						<div class="draggable ui-comp">
-							<p>으앙</p>
+							<p>
+								으앙
+							</p>
 						</div>
 						<div class="draggable ui-comp">
-							<p>집에가자</p>
+							<p>
+								집에가자
+							</p>
 						</div>
 					</div>
 				</div>
 				<div class="tab-pane" id="comment">
 					<div class="tab-content-container">
-						<
+
+						<div>
+							<a href="#" class="comment comment-success"> <i class="fa fa-check-square"></i> Very Good</a>
+						</div>
+							<br/>
+						<div>
+							<a href="#" class="comment comment-primary"> <i class="fa fa-mail-reply"></i> Cancel</a>
+						</div>
+							<br/>
+						<div>
+							<a href="#" class="comment comment-info"> <i class="fa fa-search"></i> Review</a>
+						</div>
+							<br/>
+						<div>
+							<a href="#" class="comment comment-warning"> <i class="fa fa-warning"></i> Warning</a>
+						</div>
+							<br/>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- /tabs -->
 
-		<div class="main-content">
-			<div class="bs-docs-section centered">
+		<div class="main-content full-height">
+			<div class="bs-docs-section centered full-height">
 				<img class="screen-app-background" src="images/iphone-portrait.png"/>
 				<img class="screen-app-image" src="images/sample-screen1.png"/>
 			</div>
 		</div>
 
 		<!-- bower script zone -->
+		<script src="bower_components/jquery/jquery.js"></script>
+		<script src="bower_components/jqueryui/ui/jquery-ui.js"></script>
 		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 		<!-- dev script zone -->
 		<script src="http://localhost:35729/livereload.js"></script>
@@ -86,8 +108,7 @@
 		<script src="javascripts/script.js"></script>
 		<script src="javascripts/ui-components.js"></script>
 		<script src="javascripts/comments.js"></script>
-		
-		
+
 	</body>
 </html>
 
