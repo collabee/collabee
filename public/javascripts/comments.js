@@ -76,8 +76,9 @@ $(document).ready(function() {
 				commentList.push(commentModel);
 
 				$('#commentWritePanel').remove();
-
+				$('.comment-icon').off();	
 				$('.comment-icon').on('click', function(e) {
+					
 					var comment = $(e.target).attr('comment-id');
 					var tmpl = _.template($('#tmpl_commentReadPanel').html());
 					var html = tmpl({
@@ -91,9 +92,9 @@ $(document).ready(function() {
 						top : commentList[comment].top,
 						"z-index" : 3
 					}).appendTo('body');
-
+					
 					$('#read-comment-btn-close').on('click', function(e) {
-						$(this).closest('.panel').remove();
+						$(this).parents('.panel').remove();
 					});
 				});
 
