@@ -1,3 +1,42 @@
+/* ui component set */
+.ui-component-set {
+	background-color: #f9f9f9;
+}
+
+.ui-component-set img {
+	width: 240px;
+}
+
+/* ui component button */
+.btn-ui-component {
+	width: 140px;
+	margin: 3px;	
+}
+
+.btns-ui-component {
+	margin-left: 3px;
+}
+
+.btn-wireframe {
+	background-color: #fff;
+	color: #181a2d;
+}
+
+.btn-wireframe:hover {
+	background-color: #fff;
+	color: #181a2d;
+}
+
+.btn-upload {
+	background-color: #181A2D;
+	color: #f9f9f9;
+}
+
+.btn-upload:hover {
+	background-color: #181A2D;
+	color: #f9f9f9;
+}
+
 /* footer */
 
 .screen-footer {
