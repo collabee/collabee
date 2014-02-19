@@ -1,5 +1,12 @@
 /* comment */
 
+.comment-panel {
+	width: 500px;
+}
+
+.comment-panel-footer {
+	margin: 10px;
+}
 a.comment {
 	font-size: 18px;
 	text-decoration: none;

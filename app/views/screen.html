@@ -40,15 +40,17 @@
 		<div class="tabbable tabs-right sub-content screen-tab">
 			<ul class="nav nav-tabs full-height">
 				<li class="active">
-					<a id="button-ui-component" href="#ui-component" data-toggle="tab">UI Components</a>
+					<a id="button-ui-component" href="#ui-component" data-toggle="tab"><i class="fa fa-2x fa-laptop"></i></a>
 				</li>
 				<li>
-					<a id="button-comment" href="#comment" data-toggle="tab">Comments</a>
+					<a id="button-comment" href="#comment" data-toggle="tab"><i class="fa fa-2x fa-comment-o"></i></a>
 				</li>
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane active" id="ui-component">
 					<div class="tab-content-container">
+						<h3>UI Components</h3>
+						<br/>
 						<div class="draggable ui-comp">
 							<p>
 								우냐냐
@@ -68,23 +70,24 @@
 				</div>
 				<div class="tab-pane" id="comment">
 					<div class="tab-content-container">
-
+						<h3>Comment Category</h3>
+						<br/>
 						<div>
-							<a href="#" class="comment comment-success"> <i class="fa fa-check-square"></i> Very Good</a>
+							<a href="#" class="comment comment-success"> <i class="fa fa-check-square margin-right-10"></i>Good</a>
 						</div>
-							<br/>
+						<br/>
 						<div>
-							<a href="#" class="comment comment-primary"> <i class="fa fa-mail-reply"></i> Cancel</a>
+							<a href="#" class="comment comment-primary"> <i class="fa fa-mail-reply margin-right-10"></i>Cancel</a>
 						</div>
-							<br/>
+						<br/>
 						<div>
-							<a href="#" class="comment comment-info"> <i class="fa fa-search"></i> Review</a>
+							<a href="#" class="comment comment-info"> <i class="fa fa-search margin-right-10"></i>Review</a>
 						</div>
-							<br/>
+						<br/>
 						<div>
-							<a href="#" class="comment comment-warning"> <i class="fa fa-warning"></i> Warning</a>
+							<a href="#" class="comment comment-warning"> <i class="fa fa-warning margin-right-10"></i>Warning</a>
 						</div>
-							<br/>
+						<br/>
 					</div>
 				</div>
 			</div>
@@ -98,10 +101,61 @@
 			</div>
 		</div>
 
+		<!-- pandel zone -->
+		<script type="text/template" id="tmpl_commentWritePanel">
+			<div class="panel panel-default comment-panel" id="commentWritePanel">
+			<div class="panel-heading">
+			<h3 class="panel-title"><%= comment %></h3>
+			</div>
+			<div class="panel-body">
+			<div class="row">
+			<div class="col-lg-2">
+			logo
+			<br>
+			<%= name %>
+			<%= time %>
+			</div>
+			<div class="col-lg-10">
+			<textarea id="comment-text" class="form-control" rows="7"><%= text %></textarea>
+			</div>
+			</div>
+			<div class="row comment-panel-footer">
+			<div class="pull-right">
+			<div id="comment-btn-write" class="btn btn-primary">Write</div>
+			<div id="comment-btn-close" class="btn btn-default">Close</div>
+			</div>
+			</div>
+			</div>
+			</div>
+		</script>
+
+		<!-- pandel zone -->
+		<script type="text/template" id="tmpl_commentReadPanel">
+			<div class="panel panel-default comment-panel" id="commentReadPanel">
+			<div class="panel-heading">
+			<h3 class="panel-title">From <%= name %></h3>
+			</div>
+			<div class="panel-body">
+			<div class="row">
+			<div class="col-lg-12">
+			<%= text %>
+			</div>
+			</div>
+			<div class="row comment-panel-footer">
+			<div class="pull-right">
+			<!-- <div id="comment-btn-write" class="btn btn-primary">Write</div> -->
+			<div id="read-comment-btn-close" class="btn btn-default">Close</div>
+			</div>
+			</div>
+			</div>
+			</div>
+		</script>
+
 		<!-- bower script zone -->
 		<script src="bower_components/jquery/jquery.js"></script>
 		<script src="bower_components/jqueryui/ui/jquery-ui.js"></script>
 		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="bower_components/underscore/underscore.js"></script>
 		<!-- dev script zone -->
 		<script src="http://localhost:35729/livereload.js"></script>
 		<!-- custom script zone -->

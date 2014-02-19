@@ -9,5 +9,6 @@ $(document).ready(function() {
 	
 	$('#button-ui-component').on('click', function(e) {
 		$('.main-content').css('cursor', 'default');
+		$('.main-content').off();
 	});
 });
