@@ -16,9 +16,11 @@
 		<!-- favicon.ico -->
 		<link rel="shortcut icon" href="/images/favicon.ico"/>
 		<!-- bower css zone -->
+		<link rel="stylesheet" href="bower_components/bootstrap-switch/build/css/bootstrap3/bootstrap-switch.min.css" />
 		<!-- custom css zone -->
 		<link rel="stylesheet" href="stylesheets/bootstrap.custom.css" />
 		<link rel="stylesheet" href="stylesheets/style.css" />
+		<link rel="stylesheet" href="stylesheets/workspace.css" />
 
 	</head>
 
@@ -73,28 +75,14 @@
 					<div class="bs-example">
 						<ul class="nav nav-tabs" style="margin-bottom: 15px;">
 							<li class="active">
-								<!-- <a href="#work" data-toggle="tab">Work</a> -->
-								<div class="btn-group">
-									<button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-										Work <span class="caret"></span>
-									</button>
-									<ul class="dropdown-menu" role="menu">
-										<li>
-											<a href="#">Action</a>
-										</li>
-										<li class="divider"></li>
-										<li>
-											<a href="#">Separated link</a>
-										</li>
-									</ul>
-								</div>
+								<a href="#work" data-toggle="tab">Work</a>
 							</li>
 							<li class="">
 								<a href="#co-work" data-toggle="tab">Co-Work</a>
 							</li>
 						</ul>
 						<div id="workTabContents" class="tab-content">
-							<div class="tab-pane fade active in" id="tab-contents-sketch">
+							<div class="tab-pane fade in" id="tab-contents-sketch">
 								<p>
 									Sketch
 								</p>
@@ -104,10 +92,24 @@
 									Design
 								</p>
 							</div>
-							<div class="tab-pane fade" id="tab-contents-co-work">
+							<div class="tab-pane fade" id="co-work">
 								<p>
 									co-work contents
 								</p>
+							</div>
+							<div class="tab-pane fade active in" id="work">
+								<div class="row">
+									<div class="pull-left">
+										<a class="btn btn-danger"> New Screen </a>
+										<span class="text-screen-number">24 Screens</span>
+									</div>
+									<div class="pull-right">
+										<input class="work-switch" type="checkbox" name="my-checkbox" checked>
+									</div>
+								</div>
+								<div class="row">
+									work contents
+								</div>
 							</div>
 						</div>
 					</div>
@@ -120,10 +122,12 @@
 		<!-- bower script zone -->
 		<script src="bower_components/jquery/jquery.js"></script>
 		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="bower_components/bootstrap-switch/build/js/bootstrap-switch.min.js"></script>
 		<!-- dev script zone -->
 		<script src="http://localhost:35729/livereload.js"></script>
 		<!-- custom script zone -->
 		<script src="javascripts/script.js"></script>
+		<script src="javascripts/workspace.js"></script>
 	</body>
 </html>
 
