@@ -24,6 +24,12 @@
 	margin-top: 2px;
 }
 
+/* new screen button, modal */
+
+.padding-bottom-20 {
+	padding-bottom: 20px;
+}
+
 /* switch color */
 .has-switch span.switch-right {
 	color: #fff;
@@ -43,6 +49,19 @@
 
 .screen {
 	margin-bottom: 60px;
+}
+
+.screen-empty-button {
+	padding:9px;
+}
+
+.image-button {
+	
+}
+
+.screen-name {
+	margin-top: 15px;
+	font-size: 15px;
 }
 
 /* image */

@@ -58,28 +58,29 @@
 
 		<div class="container">
 			<div class="bs-docs-section">
-				<div class="row">
-					<form class="form-inline">
-						<a class="btn btn-info btn-xs nav-tabs-right" data-toggle="collapse" data-target="#milestone"> - </a>
-						<h3><span class="glyphicon glyphicon-list-alt"></span> &nbsp;&nbsp;Milestone</h3>
-					</form>
-					<div id="milestone" class="bs-example collapse in">
-						<div class="progress progress-striped active">
-							<div class="progress-bar" style="width: 45%"></div>
-						</div>
-					</div>
+				<!-- <div class="row">
+				<form class="form-inline">
+				<a class="btn btn-info btn-xs nav-tabs-right" data-toggle="collapse" data-target="#milestone"> - </a>
+				<h3><span class="glyphicon glyphicon-list-alt"></span> &nbsp;&nbsp;Milestone</h3>
+				</form>
+				<div id="milestone" class="bs-example collapse in">
+				<div class="progress progress-striped active">
+				<div class="progress-bar" style="width: 45%"></div>
 				</div>
-				<br/>
+				</div>
+				</div>
+				<br/> -->
 
 				<div class="row">
 					<h3 id="nav-tabs"><span class="glyphicon glyphicon-folder-open"></span> &nbsp;&nbsp;Workspace</h3>
+					<br/>
 					<div class="bs-example">
 						<ul class="nav nav-tabs" style="margin-bottom: 15px;">
 							<li class="active">
 								<a href="#work" data-toggle="tab">Work</a>
 							</li>
 							<li class="">
-								<a href="#co-work" data-toggle="tab">Co-Work</a>
+								<a href="#co-work" data-toggle="tab">Timeline</a>
 							</li>
 						</ul>
 						<div id="workTabContents" class="tab-content">
@@ -99,7 +100,7 @@
 									<div class="row work-second-tab-bar">
 										<div class="form-inline">
 											<span class="text-screen-number">24 Screens</span>
-											<a class="btn-new-screen btn btn-danger div-right">New</a>
+											<a data-toggle="modal" data-target="#modal-new-screen" class="btn btn-danger div-right">New</a>
 										</div>
 									</div>
 									<div id="mode-contents-area" class="row"></div>
@@ -115,18 +116,27 @@
 
 		<!-- script zone -->
 		<script type="text/template" id="tmpl_screen">
-			<div class="col-sm-3 screen">
+			<div class="col-sm-3 screen" screen-id="<%= screen.id %>">
 			<div class="row">
 			<div class="form-inline image-selector">
-			<select class="form-control select-layer" style="width: 162px;">
-			<option></option>
+			<select class="form-control select-layer" style="width: 100px;">
+			<% _.each(screen.imageList, function(image) { %>
+			<option image-id="<%= image.id %>"><%= image.name %></option>
+			<% }) %>
 			</select>
-			<a class="btn btn-danger"><i class="icon-new-screen fa fa-1x fa-plus"></i></a>
+			<a class="btn btn-danger image-add-button"><i class="icon-new-screen fa fa-1x fa-plus"></i></a>
+			<a class="btn btn-danger image-delete-button"><i class="icon-new-screen fa fa-1x fa-minus"></i></a>			<span class="screen-empty-button">
+			</span>
 			</div>
 			</div>
-			<div class="row ">
+			<div class="row">
 			<div class="div-centered image-wrapper">
 			</div>
+			</div>
+			<div class="row centered">
+			<p class="screen-name">
+			<%= screen.name %>
+			</p>
 			</div>
 			</div>
 		</script>
@@ -134,31 +144,95 @@
 		<script type="text/template" id="tmpl_sketchArea">
 			<div class="mode-area">
 			<% _.each(screenList, function(screen) { %>
-                <div class="col-sm-3 screen" screen-id="<%= screen.id %>">
-                <div class="row">
-                <div class="form-inline image-selector">
-                <select class="form-control select-layer" style="width: 162px;">
-                	<% _.each(screen.imageList, function(image) { %>
-                	<option><%= image.name %></option>
-                	<% }) %>
-                </select>
-                <a class="btn btn-danger"><i class="icon-new-screen fa fa-1x fa-plus"></i></a>
-                </div>
-                </div>
-                <div class="row ">
-                <div class="div-centered image-wrapper">
-                </div>
-                </div>
-                </div>
+			<div class="col-sm-3 screen" screen-id="<%= screen.id %>">
+			<div class="row">
+			<div class="form-inline image-selector">
+			<select class="form-control select-layer" style="width: 100px;">
+			<% _.each(screen.imageList, function(image) { %>
+			<option image-id="<%= image.id %>"><%= image.name %></option>
+			<% }) %>
+			</select>
+			<a class="btn btn-danger image-add-button"><i class="icon-new-screen fa fa-1x fa-plus"></i></a>
+			<a class="btn btn-danger image-delete-button"><i class="icon-new-screen fa fa-1x fa-minus"></i></a>
+			<span class="screen-empty-button">
+			</span>
+			</div>
+			</div>
+			<div class="row ">
+			<div class="div-centered image-wrapper">
+			</div>
+			</div>
+			<div class="row centered">
+			<p class="screen-name">
+			<%= screen.name %>
+			</p>
+			</div>
+			</div>
 			<% }) %>
 			</div>
 		</script>
-		
+
 		<script type="text/template" id="tmpl_designArea">
 			<div class="mode-area">
-
+			<% _.each(screenList, function(screen) { %>
+			<div class="col-sm-3 screen" screen-id="<%= screen.id %>">
+			<div class="row">
+			<div class="form-inline image-selector">
+			<select class="form-control select-layer" style="width: 100px;">
+			<% _.each(screen.imageList, function(image) { %>
+			<option image-id="<%= image.id %>"><%= image.name %></option>
+			<% }) %>
+			</select>
+			<a class="btn btn-danger image-add-button"><i class="icon-new-screen fa fa-1x fa-plus"></i></a>
+			<a class="btn btn-danger image-delete-button"><i class="icon-new-screen fa fa-1x fa-minus"></i></a>
+			<span class="screen-empty-button">
+			</span>
+			</div>
+			</div>
+			<div class="row ">
+			<div class="div-centered image-wrapper">
+			</div>
+			</div>
+			<div class="row centered">
+			<p class="screen-name">
+			<%= screen.name %>
+			</p>
+			</div>
+			</div>
+			<% }) %>
 			</div>
 		</script>
+
+		<!-- modal zone -->
+<!-- modal zone -->
+		<div class="modal fade" id="modal-new-screen">
+			<div class="modal-dialog modal-dialog-center">
+				<div class="modal-content modal-content-center">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title">Create New Screen</h4>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal" role="form">
+							<div class="form-group">
+								<label for="inputProjectName" class="col-sm-3 control-label">Screen Name</label>
+								<div class="col-sm-9">
+									<input type="text" class="form-control" placeholder="insert new screen name">
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<a class="btn btn-primary btn-new-screen" role="button" data-dismiss="modal">OK</a>
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							Close
+						</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
 
 		<!-- bower script zone -->
 		<script src="bower_components/jquery/jquery.js"></script>
