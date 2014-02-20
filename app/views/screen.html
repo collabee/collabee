@@ -17,21 +17,13 @@
 		<link rel="shortcut icon" href="/images/favicon.ico"/>
 		<!-- bower css zone -->
 		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="bower_components/jqueryui/themes/base/jquery-ui.css" />
 		<!-- custom css zone -->
 		<link rel="stylesheet" href="stylesheets/bootstrap.custom.css" />
 		<link rel="stylesheet" href="stylesheets/style.css" />
 		<link rel="stylesheet" href="stylesheets/screen.css" />
-
 		<style>
-			html, body {
-				height: 100%;
-			}
-			.ui-comp {
-				width: 100px;
-				height: 100px;
-				border: solid 1px gray;
-				background-color: beige;
-			}
+			
 		</style>
 
 	</head>
@@ -49,20 +41,68 @@
 			<div class="tab-content">
 				<div class="tab-pane active" id="ui-component">
 					<div class="tab-content-container">
-						<div class="draggable ui-comp">
-							<p>
-								우냐냐
-							</p>
+						<div class="ui-buttons">
+							<button type="button" id="setUiWire" class="btn btn-default btn-sm">Wireframe</button>
+							<button type="button" id="setUiUp" class="btn btn-primary btn-sm">Upload</button>
 						</div>
-						<div class="draggable ui-comp">
-							<p>
-								으앙
-							</p>
+						
+						<div class="ui-comp-group" style="display:block;">
+							<ul class="ui-comp-list">
+								<li class="draggable ui-comp">
+									<span class="glyphicon glyphicon-asterisk"></span>
+								</li>
+								<li class="draggable ui-comp">
+									<span class="glyphicon glyphicon-remove"></span>
+								</li>
+								<li class="draggable ui-comp">
+									<span class="glyphicon glyphicon-cloud"></span>
+								</li>
+								<li class="draggable ui-comp">
+									<span class="glyphicon glyphicon-zoom-in"></span>
+								</li>
+							</ul>
 						</div>
-						<div class="draggable ui-comp">
-							<p>
-								집에가자
-							</p>
+						
+						<div class="ui-upload-group" style="display:none;padding-top:10px;">
+							<!-- <div class="upload-zone" ondragenter="onDragEnter(event)"  ondragover="onDragOver(event)"
+       						ondrop="onDrop(event)">
+								Drag & Drop
+							</div> -->
+							 <section>
+								<form>
+									<div class="options" style="display:none;">
+										<label for="width">Width:</label><input id="width" type="number" name="width" value="100">
+										<label for="height">Height:</label><input id="height"  type="number"  name="height" value="100">
+										<input type="checkbox" id="crop"><label for="crop">crop thumbnail</label>
+										<span class="crop"><label for="bg">background:</label><input type="text" value="white" id="bg"></span>
+										<input type="checkbox" id="jpeg">
+										<label for="jpeg">JPG</label>
+										<span class="jpeg"><label for="quality">Quality</label>
+										<input type="number" max="100" min="0" value="50" id="quality"> %</span>
+									</div>
+									<div id="dropzone" class="resizable">This demo needs a canvas and FileReader capable browser
+									</div>
+								</form>
+								<output>
+									<p>Upload Files</p>
+									<img src="https://pbs.twimg.com/media/Bg4dzUjCIAAMrZ6.jpg" title="26.57 KB" id="yuna" class="draggable resizable" style="width:100px;height:100px;">
+								</output>
+							</section>
+							
+							<ul class="up-comp-list">
+								<li class="draggable ui-comp">
+									<span class="glyphicon glyphicon-asterisk"></span>
+								</li>
+								<li class="draggable ui-comp">
+									<span class="glyphicon glyphicon-remove"></span>
+								</li>
+								<li class="draggable ui-comp">
+									<span class="glyphicon glyphicon-cloud"></span>
+								</li>
+								<li class="draggable ui-comp">
+									<span class="glyphicon glyphicon-zoom-in"></span>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -92,10 +132,11 @@
 		<!-- /tabs -->
 
 		<div class="main-content full-height">
-			<div class="bs-docs-section centered full-height">
+			<div class="bs-docs-section centered full-height droppable">
 				<img class="screen-app-background" src="images/iphone-portrait.png"/>
 				<img class="screen-app-image" src="images/sample-screen1.png"/>
 			</div>
+			<div class="resizable" style="border:2px dotted red;width: 322px;height: 300px;z-index:10;position: absolute;top: 0px;left: 407px;"></div>
 		</div>
 
 		<!-- bower script zone -->
