@@ -37,14 +37,14 @@ a.comment {
 .screen-app-background {
 	z-index: 1;
 	position: absolute;
-	top: 1px;
-	left: 385px;
+	top: 140px;
+	left: 285px;
 }
 
 .screen-app-image {
 	z-index: 2;
-	top: 84px;
-	left: 472px;
+	top: 223px;
+	left: 372px;
 	position: absolute;
 	width: 322px;
 	height: 569px;
@@ -52,13 +52,13 @@ a.comment {
 
 /* tab */
 .tab-content-container {
-	padding: 40px;
+	/* padding: 40px; */
 }
 
 /* full-height */
 .main-content {
 	position: relative;
-	margin-left: 20%;
+	margin-left: 450px;
 }
 
 
@@ -77,7 +77,8 @@ a.comment {
 }
 
 .tab-content { 
-	width:450px;
+	width:400px;
+	background: #181a2d;
 }
 
 /* custom inclusion of right, left and below tabs */
@@ -122,9 +123,11 @@ a.comment {
 }
 
 .tabs-left > .nav-tabs > li > a, .tabs-right > .nav-tabs > li > a {
-	min-width: 74px;
+	/* min-width: 74px; */
 	margin-right: 0;
 	margin-bottom: 3px;
+	height: 127px;
+	width: 56px;
 }
 
 .tabs-left > .nav-tabs {
@@ -153,6 +156,7 @@ a.comment {
 	float: right;
 	margin-left: 19px;
 	border-left: 1px solid #ddd;
+	background: #f9f9f9;
 }
 
 .tabs-right > .nav-tabs > li > a {
@@ -167,8 +171,26 @@ a.comment {
 }
 
 .tabs-right > .nav-tabs .active > a, .tabs-right > .nav-tabs .active > a:hover, .tabs-right > .nav-tabs .active > a:focus {
-	border-color: #ddd #ddd #ddd transparent;
-	*border-left-color: #ffffff;
+	/* border-color: #ddd #ddd #ddd transparent;
+	*border-left-color: #ffffff; */
+	border:0px;
+	background-color: transparent;
+}
+
+#button-comment {
+	background-image: url('/images/screen/tap_comment_nor.png');
+}
+
+#button-ui-component {
+	background-image: url('/images/screen/tap_uicomp_nor.png');
+}
+
+.active > #button-comment {
+	background-image: url('/images/screen/tap_comment_sel.png');
+}
+
+.active #button-ui-component {
+	background-image: url('/images/screen/tap_uicomp_sel.png');
 }
 
 
@@ -177,6 +199,7 @@ a.comment {
 /* UI Components */
 html, body {
 	height: 100%;
+	background: #f9f9f9;
 }
 
 .draggable {

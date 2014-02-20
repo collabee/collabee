@@ -32,13 +32,13 @@
 		<div class="tabbable tabs-right sub-content screen-tab">
 			<ul class="nav nav-tabs full-height">
 				<li class="active">
-					<a id="button-ui-component" href="#ui-component" data-toggle="tab"><i class="fa fa-2x fa-laptop"></i></a>
+					<a id="button-ui-component" href="#ui-component" data-toggle="tab"><!-- <i class="fa fa-2x fa-laptop"></i> --></a>
 				</li>
 				<li>
-					<a id="button-comment" href="#comment" data-toggle="tab"><i class="fa fa-2x fa-comment-o"></i></a>
+					<a id="button-comment" href="#comment" data-toggle="tab"><!-- <i class="fa fa-2x fa-comment-o"></i> --></a>
 				</li>
 			</ul>
-			<div class="tab-content">
+			<div class="tab-content full-height">
 				<div class="tab-pane active" id="ui-component">
 					<div class="tab-content-container">
 						<div class="ui-buttons">
@@ -85,7 +85,7 @@
 								</form>
 								<output>
 									<p>Upload Files</p>
-									<img src="https://pbs.twimg.com/media/Bg4dzUjCIAAMrZ6.jpg" title="26.57 KB" id="yuna" class="draggable resizable" style="width:100px;height:100px;">
+									<img src="https://pbs.twimg.com/media/Bg4dzUjCIAAMrZ6.jpg" title="26.57 KB" id="yuna" class="draggable" style="width:100px;height:100px;">
 								</output>
 							</section>
 							
@@ -111,19 +111,27 @@
 						<h3>Comment Category</h3>
 						<br/>
 						<div>
-							<a href="#" class="comment comment-success"> <i class="fa fa-check-square margin-right-10"></i>Good</a>
+							<a href="#" class="comment comment-success"> <i class="fa fa-check-square margin-right-10"></i>Good
+								<img src="/images/screen/btn_comment_1.png" style="width:300px;">
+							</a>
 						</div>
 						<br/>
 						<div>
-							<a href="#" class="comment comment-primary"> <i class="fa fa-mail-reply margin-right-10"></i>Cancel</a>
+							<a href="#" class="comment comment-primary"> <!-- <i class="fa fa-mail-reply margin-right-10"></i>Cancel -->
+								<img src="/images/screen/btn_comment_2.png" style="width:300px;">
+							</a>
 						</div>
 						<br/>
 						<div>
-							<a href="#" class="comment comment-info"> <i class="fa fa-search margin-right-10"></i>Review</a>
+							<a href="#" class="comment comment-info"> <!-- <i class="fa fa-search margin-right-10"></i>Review -->
+								<img src="/images/screen/btn_comment_3.png" style="width:300px;">
+							</a>
 						</div>
 						<br/>
 						<div>
-							<a href="#" class="comment comment-warning"> <i class="fa fa-warning margin-right-10"></i>Warning</a>
+							<a href="#" class="comment comment-warning"> <!-- <i class="fa fa-warning margin-right-10"></i>Warning -->
+								<img src="/images/screen/btn_comment_4.png" style="width:300px;">
+							</a>
 						</div>
 						<br/>
 					</div>
@@ -133,11 +141,14 @@
 		<!-- /tabs -->
 
 		<div class="main-content full-height">
-			<div class="bs-docs-section centered full-height droppable">
+			<div class="centered full-height droppable">
 				<img class="screen-app-background" src="images/iphone-portrait.png"/>
 				<img class="screen-app-image" src="images/sample-screen1.png"/>
 			</div>
-			<div class="resizable" style="border:2px dotted red;width: 322px;height: 300px;z-index:10;position: absolute;top: 0px;left: 407px;"></div>
+			<div class="" style="border:2px dotted red;width: 322px;height: 300px;z-index:10;position: absolute;top: 0px;left: 407px;"></div>
+			<div id="toolbox" style="background:green;width:500px;height: 75px;position: absolute;top: 20px;left: 35px;">
+				<!-- <div id="id" style="width:50px;height:50px;background:yellow;"></div> -->
+			</div>
 		</div>
 
 		<!-- pandel zone -->

@@ -27,6 +27,8 @@ $(document).ready(function() {
 		$('.ui-upload-group').css('display', 'block');
 	});
 	
+	
+	
 });
 
 function drag() {
@@ -169,8 +171,13 @@ http://wait-till-i.com/license.txt
 		thumb.class = 'draggable';
 		var imgHtml = '<img src="' + thumb.src + '" title="' + thumb.title + '" class="draggable ui-draggable">';
 		alert(thumb.class);
-		o.appendChild( thumb );
+		//o.appendChild( thumb );
 		jQuery("output").append(imgHtml);
+		
+		console.log("c : " + c);
+		var innerToolbox = '<div id="id" style="width:50px;height:50px;background:yellow;"></div>';
+		jQuery("#toolbox").append(innerToolbox);
+		
 		drag();
 	};
 	
