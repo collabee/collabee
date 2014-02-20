@@ -1,9 +1,7 @@
-
-
 function Image(id, name, url) {
 	this.id = id;
 	this.name = name;
-	this.url = url;	
+	this.url = url;
 };
 
 function Screen(id, imageList, name) {
@@ -12,26 +10,44 @@ function Screen(id, imageList, name) {
 	this.name = name;
 };
 
-$(document).ready(function() {
-	// new Screen
-	var screenList = [];
+function createDummySketchs() {
+	var screens = [];
+	var imageList1 = [];
+	imageList1.push(new Image(imageList1.length, 'Main 1-1', 'url1'));
+	imageList1.push(new Image(imageList1.length, 'Main 1-2', 'url2'));
+	imageList1.push(new Image(imageList1.length, 'Main 1-3', 'url3'));
+
+	var imageList2 = [];
+	imageList2.push(new Image(imageList1.length, 'Service 1-1', 'url1'));
+	imageList2.push(new Image(imageList1.length, 'Service 1-2', 'url2'));
 	
+	screens.push(new Screen(screens.length, imageList1, 'Main'));
+	screens.push(new Screen(screens.length, imageList2, 'Service'));
+		
+	return screens;
+};
+
+function createDummyDesigns() {
+	
+};
+
+$(document).ready(function() {
+	// new screen
+	var sketchScreens = createDummySketchs();
+	var designScreens = createDummyDesigns();
+
 	$('.btn-new-screen').on('click', function(e) {
 		var imageList = [];
-		var screen = new Screen(screenList.length, imageList, 'screen' + screenList.length);
-		var screenViewCount = screenList.length;
-		
-		if ( (screenViewCount % 4) === 0 ) {
-			var row = $('<div class="row screen-row"></div>');
-			$('.mode-area').append(row);
-		}
-		
-		var targetRow = $('.mode-area > .row:last-child');
+		var screen = new Screen(sketchScreens.length, imageList, 'screen' + sketchScreens.length);
+		var screenViewCount = sketchScreens.length;
+
+		// var targetRow = $('.mode-area > .row:last-child');
+		var targetRow = $('.mode-area');
 		var template = _.template($('#tmpl_screen').html());
-		
+
 		$(targetRow).append(template(screen));
-		screenList.push(screen);
-	}); 
+		sketchScreens.push(screen);
+	});
 
 	// mode switching
 	var designTemplate = _.template($('#tmpl_designArea').html());
@@ -43,7 +59,9 @@ $(document).ready(function() {
 	};
 
 	var target = '#mode-contents-area';
-	$(target).html(sketchTemplate());
+	$(target).html(sketchTemplate({
+		screenList : sketchScreens
+	}));
 	switchInitialize();
 	makeSketchSwitch();
 
@@ -70,7 +88,9 @@ $(document).ready(function() {
 
 			makeSketchSwitch();
 		}
-		$(target).html(modeMap[modeState]());
+		$(target).html(modeMap[modeState]({
+			screenList: sketchScreens
+		}));
 	});
 });
 
@@ -80,7 +100,7 @@ function switchInitialize() {
 	$("#mode-switch").bootstrapSwitch('setOffLabel', 'Design');
 	$("#mode-switch").bootstrapSwitch('setSizeClass', 'switch-large');
 	$('.has-switch').css({
-		outline: 'none'
+		outline : 'none'
 	});
 
 };
@@ -99,6 +119,6 @@ function makeSketchSwitch() {
 		background : '#5c2040',
 		color : '#fff',
 		'font-weight' : 'normal',
-		opacity : '0.6'
+		opacity : '0.4'
 	}).text('Design');
 };

@@ -91,8 +91,7 @@
 							<div class="tab-pane fade active in" id="work">
 								<div id="work-contents-area" class="tab-content-container">
 									<div class="row work-tab-topbar">
-										<div class="pull-left">
-										</div>
+										<div class="pull-left"></div>
 										<div class="pull-right">
 											<input id="mode-switch" class="work-switch" id="dimension-switch" type="checkbox" checked>
 										</div>
@@ -116,7 +115,7 @@
 
 		<!-- script zone -->
 		<script type="text/template" id="tmpl_screen">
-			<div class="col-sm-3">
+			<div class="col-sm-3 screen">
 			<div class="row">
 			<div class="form-inline image-selector">
 			<select class="form-control select-layer" style="width: 162px;">
@@ -131,32 +130,33 @@
 			</div>
 			</div>
 		</script>
-		
+
 		<script type="text/template" id="tmpl_sketchArea">
 			<div class="mode-area">
-				
+			<% _.each(screenList, function(screen) { %>
+                <div class="col-sm-3 screen" screen-id="<%= screen.id %>">
+                <div class="row">
+                <div class="form-inline image-selector">
+                <select class="form-control select-layer" style="width: 162px;">
+                	<% _.each(screen.imageList, function(image) { %>
+                	<option><%= image.name %></option>
+                	<% }) %>
+                </select>
+                <a class="btn btn-danger"><i class="icon-new-screen fa fa-1x fa-plus"></i></a>
+                </div>
+                </div>
+                <div class="row ">
+                <div class="div-centered image-wrapper">
+                </div>
+                </div>
+                </div>
+			<% }) %>
 			</div>
-			<!-- <div class="row">
-			<div class="col-sm-3">
-			<div class="row">
-			<div class="form-inline image-selector">
-			<select class="form-control select-layer" style="width: 162px;">
-			<option>Login Page</option>
-			<option>Service Page</option>
-			</select>
-			<a class="btn btn-danger"><i class="icon-new-screen fa fa-1x fa-plus"></i></a>
-			</div>
-			</div>
-			<div class="row ">
-			<div class="div-centered image-wrapper">
-			</div>
-			</div>
-			</div>
-			</div> -->
 		</script>
+		
 		<script type="text/template" id="tmpl_designArea">
 			<div class="mode-area">
-			
+
 			</div>
 		</script>
 
