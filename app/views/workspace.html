@@ -98,7 +98,7 @@
 						<div id="workTabContents" class="tab-content">
 							<div class="tab-pane fade timeline-contents-area" id="timeline">
 								<div class="tab-content-container">
-									<div class="row timeline-tab-bar">
+									<div class="row timeline-tab-bar" style="display:none;">
 										<form class="form-inline" role="form">
 											<div class="btn-group">
 												<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
@@ -124,12 +124,12 @@
 											</div>
 										</form>
 									</div>
-									<div class="row timeline-month-icon centered">
+									<div class="row timeline-month-icon centered" style="display:none;">
 										<div>
 											FAB
 										</div>
 									</div>
-									<div class="row timeline-activity-area">
+									<div class="row timeline-activity-area" style="display:none;">
 										<div class="col-lg-5 timeline-activity-left centered">
 											left-activities
 										</div>	
@@ -144,6 +144,9 @@
 										<div class="col-lg-5 timeline-activity-right centered">
 											right-activities
 										</div>
+									</div>
+									<div class="row" >
+										<img src="/images/img_timeline.png" style="width: 960px;margin: 0 auto;display: block;">
 									</div>
 								</div>
 							</div>
@@ -219,9 +222,11 @@
 			</div>
 			</div>
 			<div class="row row-image">
+			<a href="/screen">
 			<div class="div-centered image-wrapper centered">
 				<img src="<%= screen.imageList[0].url %>"/ class="" / accesskey="">
 			</div>
+			</a>
 			</div>
 			<div class="row centered">
 			<p class="screen-name">

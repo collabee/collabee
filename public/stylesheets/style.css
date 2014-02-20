@@ -36,3 +36,12 @@
 	padding: 20px;
 }
 
+.navbar {
+	background-color: #181a2d !important;
+	margin-bottom: 0px !important;
+	border: 0px !important;
+}
+
+#navbar-main > a:hover {
+	background-color: #181a2d !important;
+}
