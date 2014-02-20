@@ -115,7 +115,7 @@ function updateScreenView(screenId) {
 };
 
 $(document).ready(function() {
-
+	
 	// global storage for mode-contents : screens
 
 	window.sketchCount = 0;
