@@ -37,8 +37,6 @@ function imageChanged() {
 		console.log(result);
 		
 		$(img).attr('src', result.url);
-		
-		// updateScreenView(screenId, imageId);
 	});
 };
 
@@ -87,10 +85,10 @@ function createDummyDesigns() {
 	screens.push(new Screen(window.designCount, imageList2, 'gui2'));
 	screens[1].imageCount = 1;
 	window.designCount++;
-	screens.push(new Screen(window.designCount, imageList2, 'gui3'));
+	screens.push(new Screen(window.designCount, imageList3, 'gui3'));
 	screens[2].imageCount = 1;
 	window.designCount++;
-	screens.push(new Screen(window.designCount, imageList2, 'gui4'));
+	screens.push(new Screen(window.designCount, imageList4, 'gui4'));
 	screens[3].imageCount = 1;
 	window.designCount++;
 

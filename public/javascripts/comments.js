@@ -13,7 +13,7 @@ function Comment(id, name, text, left, top) {
 
 function appImageInit() {
 
-	var src = "images/sample-screen1.png";
+	var src = "images/demo/screen1.png";
 	var image = $("<img class='target-screen' src='" + src + "' />");
 
 	var iphone = $('.screen-app-background');
@@ -32,7 +32,6 @@ function appImageInit() {
 
 $(document).ready(function() {
 	// image ready
-	appImageInit();
 	
 	$('#button-comment').on('click', function(e) {
 		$('.not-moved').remove();
@@ -136,4 +135,6 @@ $(document).ready(function() {
 			});
 		});
 	});
+	
+	appImageInit();
 });

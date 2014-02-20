@@ -7,17 +7,18 @@ function dragImageInit() {
 
 	$(component1).css({
 		position : "absolute",
-		left : 42,
-		top : 195,
-		width : 252,
+		left : 55,
+		top : 188,
+		width : 232,
 		"z-index" : 3,
 	}).appendTo('body').draggable();
 	
 	$(component2).css({
 		position : "absolute",
-		left : 128,
-		top : 277,
+		left : 136,
+		top : 265,
 		"z-index" : 3,
+		width: 25,
 	}).appendTo('body').draggable();;
 	
 	$('.ui-widget-content').on('mouseup', function(e) {
