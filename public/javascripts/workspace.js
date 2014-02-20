@@ -226,8 +226,8 @@ $(document).ready(function() {
 function switchInitialize(sketchScreens, designScreens) {
 	// bootstrap switch
 	$("#mode-switch").bootstrapSwitch();
-	$("#mode-switch").bootstrapSwitch('setOnLabel', 'Sketch');
-	$("#mode-switch").bootstrapSwitch('setOffLabel', 'Design');
+	$("#mode-switch").bootstrapSwitch('setOnLabel', 'Sketch Mode');
+	$("#mode-switch").bootstrapSwitch('setOffLabel', 'Design Mode');
 	$("#mode-switch").bootstrapSwitch('setSizeClass', 'switch-large');
 	$('.has-switch').css({
 		outline : 'none'
@@ -287,18 +287,20 @@ function switchInitialize(sketchScreens, designScreens) {
 
 function makeDesignSwitch() {
 	$('.has-switch label').css({
-		background : '#dd4814',
+		/*background : '#dd4814',*/
+		background : 'gray',
 		color : '#fff',
 		'font-weight' : 'normal',
 		opacity : '0.4'
-	}).text('Sketch');
+	}).text('Sketch Mode');
 };
 
 function makeSketchSwitch() {
 	$('.has-switch label').css({
-		background : '#5c2040',
+		/*background : '#5c2040',*/
+		background : 'gray',
 		color : '#fff',
 		'font-weight' : 'normal',
 		opacity : '0.4'
-	}).text('Design');
+	}).text('Design Mode');
 };

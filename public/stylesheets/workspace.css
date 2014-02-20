@@ -49,14 +49,15 @@
 
 /* switch color */
 .has-switch span.switch-right {
-	color: #fff;
-	background: #5c2040;
+	color: limegreen;
+	background: white;
 	font-size: 16px;
 }
 .has-switch span.switch-primary, .has-switch span.switch-left {
-	color: #fff;
-	background: #dd4814;
+	color: limegreen;
+	background: white;
 	font-size: 16px;
+}
 }
 
 .select-layer {
@@ -122,3 +123,49 @@
 	padding-top: 20px;
 }
 
+.navbar {
+	background-color: #181a2d;
+	margin-bottom: 0px;
+}
+
+.bs-docs-header {
+	background-image: url('/images/workspace/bg_1400px.png');
+	height: 237px;
+}
+
+.bs-docs-header > img {
+	margin: 0 auto;
+	width: 1000px;
+	display: block;
+}
+
+#tapWork{
+	background-image: url('/images/workspace/tap_timeline.png');
+	background-color: transparent;
+	border: 0;
+	width: 255px;
+	height: 60px;
+	margin: 0;
+}
+
+#tapTime{
+	background-image: url('/images/workspace/tap_work.png');
+	background-color: transparent;
+	border: 0;
+	width: 108px;
+	height: 60px;
+	margin: 0;
+	background-position-x: -256px;
+}
+
+.active > #tapWork{
+	background-image: url('/images/workspace/tap_work.png');
+}
+
+.active > #tapTime{
+	background-image: url('/images/workspace/tap_timeline.png');
+}
+
+body {
+	background: #f9f9f9;
+}
