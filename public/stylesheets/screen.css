@@ -32,33 +32,42 @@ a.comment {
 	color: #df382c;
 }
 
+.comment > img {
+	width: 280px;
+}
+
+
+
 
 /* screen-app */
 .screen-app-background {
 	z-index: 1;
 	position: absolute;
-	top: 140px;
-	left: 285px;
+	top: 110px;
+	left: 170px;
+	width: 350px;
+	height: 576px;
 }
 
 .screen-app-image {
 	z-index: 2;
-	top: 223px;
-	left: 372px;
+	top: 167px;
+	left: 230px;
 	position: absolute;
-	width: 322px;
-	height: 569px;
+	width: 230px;
+	height: 420px;
 }
 
 /* tab */
 .tab-content-container {
 	/* padding: 40px; */
+	color: white;
 }
 
 /* full-height */
 .main-content {
 	position: relative;
-	margin-left: 450px;
+	margin-left: 380px;
 }
 
 
@@ -77,7 +86,7 @@ a.comment {
 }
 
 .tab-content { 
-	width:400px;
+	width:380px;
 	background: #181a2d;
 }
 
@@ -241,3 +250,14 @@ html, body {
 .up-comp-list li{
 	float:left;
 }
+
+
+#toolbox{
+	background-image: url('/images/screen/tool_nor.png');
+	width:482px;
+	height: 62px;
+	position: absolute;
+	top: 20px;
+	left: 100px;	
+}
+

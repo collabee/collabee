@@ -23,7 +23,7 @@ $(document).ready(function() {
 		Good : '<i class="comment-icon fa fa-check-square margin-right-10">',
 		Cancel : '<i class="comment-icon fa fa-mail-reply margin-right-10">',
 		Review : '<i class="comment-icon fa fa-search margin-right-10">',
-		Warning : '<i class="comment-icon fa fa-warning margin-right-10">',
+		Warning : '<i class="comment-icon fa fa-warning margin-right-10">'
 	};
 
 	$('.comment').on('click', function(e) {
@@ -31,6 +31,7 @@ $(document).ready(function() {
 
 		window.toggledComment = $(e.target).text().replace(/ /g, '');
 
+		console.log("window.toggledComment : " + window.toggledComment);
 		$('.main-content').on('click', function(e) {
 			var comment = iconMap[window.toggledComment];
 			window.commentTop = e.pageY;
