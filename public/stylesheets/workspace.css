@@ -1,0 +1,110 @@
+
+/* timeline tab bar */
+
+.timeline-search-input {
+	margin-left: 15px;
+}
+
+/* tab bar */
+
+.work-tab-topbar {
+	margin-bottom: 25px;
+}
+
+.work-second-tab-bar {
+	margin-bottom: 15px;
+}
+
+/* in second-tab-bar */
+
+.text-screen-number {
+	font-size: 25px;
+	padding-right: 30px;
+	padding-left: 15px;
+}
+
+.btn-new-screen {
+	/*margin-bottom: 5px;*/
+}
+
+.icon-new-screen {
+	margin-top: 2px;
+}
+
+/* new screen button, modal */
+
+.padding-bottom-20 {
+	padding-bottom: 20px;
+}
+
+/* switch color */
+.has-switch span.switch-right {
+	color: #fff;
+	background: #5c2040;
+	font-size: 16px;
+}
+.has-switch span.switch-primary, .has-switch span.switch-left {
+	color: #fff;
+	background: #dd4814;
+	font-size: 16px;
+}
+
+.select-layer {
+}
+
+/* screen */
+
+.screen {
+	margin-bottom: 60px;
+}
+
+.screen-empty-button {
+	padding:9px;
+}
+
+.image-button {
+	
+}
+
+.screen-name {
+	margin-top: 15px;
+	font-size: 15px;
+}
+
+/* image */
+
+.image-selector {
+	text-align: center;
+}
+
+.image-wrapper {
+	width: 200px;
+	height: 329px;
+	background-color: #f5f5f5;
+	margin-top: 10px;
+	/* Opera */
+	box-shadow: 10px 10px 10px silver;
+	/* Firefox */
+	-moz-box-shadow: 10px 10px 10px silver;
+	/* Safiri, Chrome */
+	-webkit-box-shadow: 10px 10px 10px silver;
+	/* IE */
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=silver,direction=135, strength=20);
+}
+
+.image-wrapper:hover {
+	border: solid 2px #5c2040;
+	/* Opera */
+	box-shadow: 0px 0px 0px silver;
+	/* Firefox */
+	-moz-box-shadow: 0px 0px 0px silver;
+	/* Safiri, Chrome */
+	-webkit-box-shadow: 0px 0px 0px silver;
+	/* IE */
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=silver,direction=0, strength=0);
+}
+
+#mode-contents-area {
+	padding-top: 20px;
+}
+

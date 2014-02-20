@@ -1,10 +1,19 @@
 .bs-docs-section {
-	margin-top: 8em;
-	position: relative;	
+	margin-top: 5em;
+	position: relative;
 }
 
 .nav-tabs-right {
 	float: right !important;
+}
+
+.div-right {
+	float: right !important;
+}
+
+.div-centered {
+	float: none;
+	margin: 0 auto;
 }
 
 .centered {
@@ -12,5 +21,18 @@
 }
 
 .modal-dialog {
-	margin: 70px auto !important;
+	/*margin: 70px auto !important;*/
+	padding-top: 15%;
 }
+
+.margin-right-10 {
+	margin-right: 10px;
+}
+
+/* modal center */
+
+/* tab */
+.tab-content-container {
+	padding: 20px;
+}
+
