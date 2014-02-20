@@ -1,0 +1,47 @@
+.bs-docs-section {
+	margin-top: 5em;
+	position: relative;
+}
+
+.nav-tabs-right {
+	float: right !important;
+}
+
+.div-right {
+	float: right !important;
+}
+
+.div-centered {
+	float: none;
+	margin: 0 auto;
+}
+
+.centered {
+	text-align: center;
+}
+
+.modal-dialog {
+	/*margin: 70px auto !important;*/
+	padding-top: 15%;
+}
+
+.margin-right-10 {
+	margin-right: 10px;
+}
+
+/* modal center */
+
+/* tab */
+.tab-content-container {
+	padding: 20px;
+}
+
+.navbar {
+	background-color: #181a2d !important;
+	margin-bottom: 0px !important;
+	border: 0px !important;
+}
+
+#navbar-main > a:hover {
+	background-color: #181a2d !important;
+}

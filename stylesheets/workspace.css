@@ -1,0 +1,184 @@
+/* button */
+
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open .dropdown-toggle.btn-danger {
+	color: #ffffff;
+	background-color: #461D7C;
+	border-color: #461D7C;
+}
+
+/* timeline tab bar */
+
+.timeline-search-input {
+	margin-left: 15px;
+}
+
+.timeline-month-icon {
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+.timeline-activity-center {
+}
+
+.vertical-line {
+}
+
+/* tab bar */
+
+.work-tab-topbar {
+	margin-bottom: 25px;
+}
+
+.work-second-tab-bar {
+	margin-bottom: 15px;
+}
+
+/* in second-tab-bar */
+
+.text-screen-number {
+	font-size: 25px;
+	padding-right: 30px;
+	padding-left: 15px;
+}
+
+.btn-new-screen {
+	/*margin-bottom: 5px;*/
+}
+
+.icon-new-screen {
+	margin-top: 2px;
+}
+
+/* new screen button, modal */
+
+.padding-bottom-20 {
+	padding-bottom: 20px;
+}
+
+/* switch color */
+.has-switch span.switch-right {
+	color: white;
+	background: #53238b;
+	font-size: 16px;
+}
+.has-switch span.switch-primary, .has-switch span.switch-left {
+	color: limegreen;
+	background: white;
+	font-size: 16px;
+}
+}
+
+.select-layer {
+}
+
+/* screen */
+
+.screen {
+	margin-bottom: 60px;
+}
+
+.screen-empty-button {
+	padding: 9px;
+}
+
+.image-button {
+
+}
+
+.screen-name {
+	margin-top: 15px;
+	font-size: 15px;
+}
+
+/* image */
+
+.image-wrapper img {
+	margin-top: 4px;
+}
+
+.image-selector {
+	text-align: center;
+}
+
+.image-wrapper {
+	width: 200px;
+	height: 348px;
+	background-color: white;
+	margin-top: 10px;
+	/* Opera */
+	/* box-shadow: 10px 10px 10px silver;
+	 Firefox
+	 -moz-box-shadow: 10px 10px 10px silver;
+	 Safiri, Chrome
+	 -webkit-box-shadow: 10px 10px 10px silver;
+	 IE
+	 filter: progid:DXImageTransform.Microsoft.Shadow(color=silver,direction=135, strength=20); */
+}
+
+.image-wrapper:hover {
+	border: solid 2px #5c2040;
+	/* Opera */
+	box-shadow: 0px 0px 0px silver;
+	/* Firefox */
+	-moz-box-shadow: 0px 0px 0px silver;
+	/* Safiri, Chrome */
+	-webkit-box-shadow: 0px 0px 0px silver;
+	/* IE */
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=silver,direction=0, strength=0);
+}
+
+#mode-contents-area {
+	padding-top: 20px;
+}
+
+.navbar {
+	background-color: #181a2d;
+	margin-bottom: 0px;
+}
+
+.bs-docs-header {
+	background-image: url('/images/workspace/bg_1400px.png');
+	height: 237px;
+}
+
+.bs-docs-header > img {
+	margin: 0 auto;
+	width: 1000px;
+	display: block;
+}
+
+#tapWork {
+	background-image: url('/images/workspace/tap_timeline.png');
+	background-color: transparent;
+	border: 0;
+	width: 255px;
+	height: 60px;
+	margin: 0;
+}
+
+#tapTime {
+	background-image: url('/images/workspace/tap_work.png');
+	background-color: transparent;
+	border: 0;
+	width: 108px;
+	height: 60px;
+	margin: 0;
+	background-position-x: -256px;
+}
+
+.active > #tapWork {
+	background-image: url('/images/workspace/tap_work.png');
+}
+
+.active > #tapTime {
+	background-image: url('/images/workspace/tap_timeline.png');
+}
+
+body {
+	background: #f9f9f9;
+}
+
+.btn-danger {
+	background: #8e8e8e;
+	border: 0;
+}
