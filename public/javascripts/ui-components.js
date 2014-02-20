@@ -1,201 +1,33 @@
+function dragImageInit() {
+	var src1 = "images/screen/drag_component_1.png";
+	var src2 = "images/screen/drag_component_2.png";
+
+	var component1 = $("<img class='not-moved ui-widget-content' src='" + src1 + "' />");
+	var component2 = $("<img class='not-moved ui-widget-content' src='" + src2 + "' />");
+
+	$(component1).css({
+		position : "absolute",
+		left : 42,
+		top : 195,
+		width : 252,
+		"z-index" : 3,
+	}).appendTo('body').draggable();
+	
+	$(component2).css({
+		position : "absolute",
+		left : 128,
+		top : 277,
+		"z-index" : 3,
+	}).appendTo('body').draggable();;
+	
+	$('.ui-widget-content').on('mouseup', function(e) {
+		$(this).removeClass('not-moved');
+	});};
 $(document).ready(function() {
-	drag();
-	
-	$(".droppable").droppable({
-		drop: function( event, ui ) {
-			/*$( this )
-			.addClass( "ui-state-highlight" )
-			.find( "p" )
-			.html( "Dropped!" );*/
-			console.log("dropped." + $(this).attr('id'));
-			$(this).css('width', '200px');
-			$(this).css('height', '200px');
-		}
-	});
-	
+	dragImageInit();
+
 	$('#button-ui-component').on('click', function(e) {
-		$('.main-content').css('cursor', 'default');
-		$('.main-content').off();
+		dragImageInit();
+
 	});
-	
-	$('#setUiWire').on('click', function(e) {
-		$('.ui-comp-group').css('display', 'block');
-		$('.ui-upload-group').css('display', 'none');
-	});
-	$('#setUiUp').on('click', function(e) {
-		$('.ui-comp-group').css('display', 'none');
-		$('.ui-upload-group').css('display', 'block');
-	});
-	
-	
-	
 });
-
-function drag() {
-	$(".resizable").resizable();
-	
-	$(".draggable").draggable({
-		stop : function(event, ui) {
-			var top = $(this).offset().top;
-			var left = $(this).offset().left;
-			alert($(this).attr('id'));
-			$(this).css('width', '200px');
-			$(this).css('height', '200px');
-			//$(this).append("top:" + top + ", left:" + left);
-		}
-	});
-	
-	
-}
-
-function onDragEnter(event){   
-	alert(0);
-	if (event.dataTransfer.dropEffect == "move")
-		event.preventDefault();                    
-}
-
-function onDragOver(event){
-	alert(1);
-	if (event.dataTransfer.dropEffect == "move") {
-		event.preventDefault();      
-	}
-}
-
-
-/*
-canvasthumber by Christian Heilmann
-Version: 1.0
-Homepage: http://thewebrocks/demos/canvasthumber
-Copyright (c) 2012, Christian Heilmann
-Code licensed under the BSD License:
-http://wait-till-i.com/license.txt
-*/
-(function(){
-	var s  = document.querySelector( '#dropzone' ),
-		o  = document.querySelector( 'output' ),
-	    cr = document.querySelector( '#crop' ),
-	    j  = document.querySelector( '#jpeg' ),
-	    c  = document.createElement( 'canvas' ),
-	    cx = c.getContext( '2d' ),
-	    thumbwidth = thumbheight = 100,
-	    crop = false,
-	    background = 'white',
-	    jpeg = false,
-	    quality = 0.8;
-	
-	function init() {
-		if (typeof FileReader !== 'undefined' ) {
-			document.body.classList.add( 'dragdrop' );
-			s.innerHTML = 'Drop images here';
-			cr.addEventListener( 'click', function ( evt ) {
-				document.body.classList.toggle( 'cropon' );
-			}, false );
-			j.addEventListener( 'click', function ( evt ) {
-				document.body.classList.toggle( 'jpegon' );
-			}, false );
-			o.addEventListener( 'click', function ( evt ) {
-				var t = evt.target;
-				if ( t.tagName === 'IMG' ) {
-					t.parentNode.removeChild( t );
-				}
-			}, false );
-			s.addEventListener( 'dragover', function ( evt ) {
-				evt.preventDefault();
-			}, false );
-			s.addEventListener( 'drop', getfiles, false );
-		}
-	};
-	
-	function getfiles( ev ) {
-		var files	= ev.dataTransfer.files,
-			url		= window.URL || window.webkitURL,
-			objURL	= url.createObjectURL || false;
-	
-		if ( files.length > 0 ) {
-			var i = files.length;
-			while ( i-- ) {
-				var file = files[ i ];
-				if ( file.type.indexOf( 'image' ) === -1 ) { continue; }
-				if(objURL) {
-					loadImage(url.createObjectURL(file));
-				} else {
-					var reader = new FileReader();
-					reader.readAsDataURL( file );
-					reader.onload = function ( ev ) {	loadImage(ev.target.result); };
-				}
-			}
-		}
-		ev.preventDefault();
-	}
-	
-	function loadImage(file) {
-		var img = new Image();
-		img.src = file;
-		img.onload = function() {
-			grabformvalues();
-			imagetocanvas( this, thumbwidth, thumbheight, crop, background );
-		};
-	}
-	
-	function grabformvalues() {
-		thumbwidth  = document.querySelector( '#width' ).value;
-		thumbheight = document.querySelector( '#height' ).value;
-		crop = document.querySelector( '#crop' ).checked;
-		background = document.querySelector( '#bg' ).value;
-		jpeg  = document.querySelector( '#jpeg' ).checked,
-		quality = document.querySelector( '#quality ').value / 100;
-	}
-	function imagetocanvas( img, thumbwidth, thumbheight, crop, background ) {
-		c.width = thumbwidth;
-		c.height = thumbheight;
-		var dimensions = resize( img.width, img.height, thumbwidth, thumbheight );
-		if ( crop ) {
-			c.width = dimensions.w;
-			c.height = dimensions.h;
-			dimensions.x = 0;
-			dimensions.y = 0;
-		}
-		if ( background !== 'transparent' ) {
-			cx.fillStyle = background;
-			cx.fillRect ( 0, 0, thumbwidth, thumbheight );
-		}
-		cx.drawImage(img, dimensions.x, dimensions.y, dimensions.w, dimensions.h);
-		addtothumbslist( jpeg, quality );
-	};
-	
-	function addtothumbslist( jpeg, quality ) {
-		var thumb = new Image(),
-		url = jpeg ? c.toDataURL( 'image/jpeg' , quality ) : c.toDataURL();
-		thumb.src = url;
-		thumb.title = Math.round( url.length / 1000 * 100 ) / 100 + ' KB';
-		thumb.class = 'draggable';
-		var imgHtml = '<img src="' + thumb.src + '" title="' + thumb.title + '" class="draggable ui-draggable">';
-		alert(thumb.class);
-		//o.appendChild( thumb );
-		jQuery("output").append(imgHtml);
-		
-		console.log("c : " + c);
-		var innerToolbox = '<div id="id" style="width:50px;height:50px;background:yellow;"></div>';
-		jQuery("#toolbox").append(innerToolbox);
-		
-		drag();
-	};
-	
-	function resize( imagewidth, imageheight, thumbwidth, thumbheight ) {
-		var w = 0, h = 0, x = 0, y = 0,
-			widthratio  = imagewidth / thumbwidth,
-			heightratio = imageheight / thumbheight,
-			maxratio    = Math.max( widthratio, heightratio );
-		if ( maxratio > 1 ) {
-			w = imagewidth / maxratio;
-			h = imageheight / maxratio;
-		} else {
-			w = imagewidth;
-			h = imageheight;
-		}
-		x = ( thumbwidth - w ) / 2;
-		y = ( thumbheight - h ) / 2;
-		return { w:w, h:h, x:x, y:y };
-	};
-	init();
-})();

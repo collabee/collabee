@@ -45,19 +45,26 @@ function imageChanged() {
 function createDummySketchs() {
 	var screens = [];
 	var imageList1 = [];
-	imageList1.push(new Image(0, 'layer 1', 'images/image1.jpg'));
-	imageList1.push(new Image(1, 'layer 2', 'images/image1-2.jpg'));
-	imageList1.push(new Image(2, 'layer 3', 'images/image1.jpg'));
-
+	imageList1.push(new Image(0, 'layer 1', 'images/demo/wireframe-01.png'));
+	imageList1.push(new Image(1, 'layer 2', 'images/demo/wireframe-01-1.png'));
 	var imageList2 = [];
-	imageList2.push(new Image(0, 'layer 1', 'images/image1.jpg'));
-	imageList2.push(new Image(1, 'layer 2', 'images/image1-2.jpg'));
+	imageList2.push(new Image(0, 'layer 1', 'images/demo/wireframe-02.png'));
+	var imageList3 = [];
+	imageList3.push(new Image(0, 'layer 1', 'images/demo/wireframe-03.png'));
+	var imageList4 = [];
+	imageList4.push(new Image(0, 'layer 1', 'images/demo/wireframe-04.png'));
 
-	screens.push(new Screen(screens.length, imageList1, 'main'));
-	screens[0].imageCount = 3;
+	screens.push(new Screen(window.sketchCount, imageList1, 'wire1'));
+	screens[0].imageCount = 2;
 	window.sketchCount++;
-	screens.push(new Screen(screens.length, imageList2, 'service'));
-	screens[1].imageCount = 2;
+	screens.push(new Screen(window.sketchCount, imageList2, 'wire2'));
+	screens[1].imageCount = 1;
+	window.sketchCount++;
+	screens.push(new Screen(window.sketchCount, imageList3, 'wire3'));
+	screens[2].imageCount = 1;
+	window.sketchCount++;
+	screens.push(new Screen(window.sketchCount, imageList4, 'wire4'));
+	screens[3].imageCount = 1;
 	window.sketchCount++;
 
 	return screens;
@@ -66,16 +73,25 @@ function createDummySketchs() {
 function createDummyDesigns() {
 	var screens = [];
 	var imageList1 = [];
-	imageList1.push(new Image(imageList1.length, 'layer 1', 'url1'));
-
+	imageList1.push(new Image(imageList1.length, 'layer 1', 'images/demo/gui01.png'));
 	var imageList2 = [];
-	imageList2.push(new Image(imageList1.length, 'layer 1', 'url1'));
+	imageList2.push(new Image(imageList1.length, 'layer 1', 'images/demo/gui02.png'));
+	var imageList3 = [];
+	imageList3.push(new Image(imageList1.length, 'layer 1', 'images/demo/gui03.png'));
+	var imageList4 = [];
+	imageList4.push(new Image(imageList1.length, 'layer 1', 'images/demo/gui04.png'));
 
-	screens.push(new Screen(screens.length, imageList1, 'main'));
+	screens.push(new Screen(window.designCount, imageList1, 'gui1'));
 	screens[0].imageCount = 1;
 	window.designCount++;
-	screens.push(new Screen(screens.length, imageList2, 'service'));
+	screens.push(new Screen(window.designCount, imageList2, 'gui2'));
 	screens[1].imageCount = 1;
+	window.designCount++;
+	screens.push(new Screen(window.designCount, imageList2, 'gui3'));
+	screens[2].imageCount = 1;
+	window.designCount++;
+	screens.push(new Screen(window.designCount, imageList2, 'gui4'));
+	screens[3].imageCount = 1;
 	window.designCount++;
 
 	return screens;
@@ -171,7 +187,6 @@ $(document).ready(function() {
 		// get screen name from input
 
 		var name = $('input', '#modal-new-screen').val() || 'screen' + window.designCount;
-		console.log(name);
 
 		// make new sketch screen
 		var imageList = [];
@@ -190,7 +205,8 @@ $(document).ready(function() {
 		var template = _.template($('#tmpl_screen').html());
 
 		$(targetRow).append(template({
-			screen : screen
+			screen : screen,
+			
 		}));
 
 		getScreenContextMenu();

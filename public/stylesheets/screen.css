@@ -1,20 +1,25 @@
 /* ui component set */
 .ui-component-set {
 	background-color: #f9f9f9;
+	margin: 4px;
+	margin-top: 20px;
+	width: 285px;
+	border-radius: 4px;
 }
 
 .ui-component-set img {
-	width: 240px;
+	margin-top: 10px;
+	/*width: 240px;*/
 }
 
 /* ui component button */
 .btn-ui-component {
 	width: 140px;
-	margin: 3px;	
+	margin: 3px;
 }
 
 .btns-ui-component {
-	margin-left: 3px;
+	margin-left: 1px;
 }
 
 .btn-wireframe {
