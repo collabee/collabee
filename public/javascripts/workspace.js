@@ -34,7 +34,8 @@ function imageChanged() {
 			return (image.id == imageId);
 		});
 		
-		console.log(result.url);
+		console.log(result);
+		
 		
 		$(img).attr('src', result.url);
 		

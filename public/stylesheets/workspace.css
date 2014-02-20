@@ -1,3 +1,11 @@
+/* button */
+
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open .dropdown-toggle.btn-danger {
+	color: #ffffff;
+	background-color: #461D7C;
+	border-color: #461D7C;
+}
+
 /* timeline tab bar */
 
 .timeline-search-input {
@@ -99,12 +107,12 @@
 	margin-top: 10px;
 	/* Opera */
 	/* box-shadow: 10px 10px 10px silver;
-	Firefox
-	-moz-box-shadow: 10px 10px 10px silver;
-	Safiri, Chrome
-	-webkit-box-shadow: 10px 10px 10px silver;
-	IE
-	filter: progid:DXImageTransform.Microsoft.Shadow(color=silver,direction=135, strength=20); */
+	 Firefox
+	 -moz-box-shadow: 10px 10px 10px silver;
+	 Safiri, Chrome
+	 -webkit-box-shadow: 10px 10px 10px silver;
+	 IE
+	 filter: progid:DXImageTransform.Microsoft.Shadow(color=silver,direction=135, strength=20); */
 }
 
 .image-wrapper:hover {
@@ -139,7 +147,7 @@
 	display: block;
 }
 
-#tapWork{
+#tapWork {
 	background-image: url('/images/workspace/tap_timeline.png');
 	background-color: transparent;
 	border: 0;
@@ -148,7 +156,7 @@
 	margin: 0;
 }
 
-#tapTime{
+#tapTime {
 	background-image: url('/images/workspace/tap_work.png');
 	background-color: transparent;
 	border: 0;
@@ -158,11 +166,11 @@
 	background-position-x: -256px;
 }
 
-.active > #tapWork{
+.active > #tapWork {
 	background-image: url('/images/workspace/tap_work.png');
 }
 
-.active > #tapTime{
+.active > #tapTime {
 	background-image: url('/images/workspace/tap_timeline.png');
 }
 
@@ -170,7 +178,7 @@ body {
 	background: #f9f9f9;
 }
 
-.btn-danger{
+.btn-danger {
 	background: #8e8e8e;
-	border : 0;
+	border: 0;
 }
