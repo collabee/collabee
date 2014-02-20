@@ -26,7 +26,7 @@ function imageChanged() {
 		screenId = $(this).closest('.screen').attr('screen-id');
 		
 		var screen = $('.screen[screen-id="' + screenId + '"]');
-		var img = $($($(screen).children()[1]).children()).children();
+		var img = $($($(screen).children()[1]).children()).children().children();
 		
 		
 		var storage = storageMap[window.workMode];
@@ -35,7 +35,6 @@ function imageChanged() {
 		});
 		
 		console.log(result);
-		
 		
 		$(img).attr('src', result.url);
 		
