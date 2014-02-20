@@ -1,8 +1,18 @@
-
 /* timeline tab bar */
 
 .timeline-search-input {
 	margin-left: 15px;
+}
+
+.timeline-month-icon {
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+.timeline-activity-center {
+}
+
+.vertical-line {
 }
 
 /* tab bar */
@@ -59,11 +69,11 @@
 }
 
 .screen-empty-button {
-	padding:9px;
+	padding: 9px;
 }
 
 .image-button {
-	
+
 }
 
 .screen-name {
@@ -79,7 +89,7 @@
 
 .image-wrapper {
 	width: 200px;
-	height: 329px;
+	height: 337px;
 	background-color: #f5f5f5;
 	margin-top: 10px;
 	/* Opera */
