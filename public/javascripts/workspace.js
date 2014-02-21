@@ -227,7 +227,7 @@ function switchInitialize(sketchScreens, designScreens) {
 	// bootstrap switch
 	$("#mode-switch").bootstrapSwitch();
 	$("#mode-switch").bootstrapSwitch('setOnLabel', 'Sketch Mode');
-	$("#mode-switch").bootstrapSwitch('setOffLabel', 'Design Mode');
+	$("#mode-switch").bootstrapSwitch('setOffLabel', 'Graphic Mode');
 	$("#mode-switch").bootstrapSwitch('setSizeClass', 'switch-large');
 	$('.has-switch').css({
 		outline : 'none'
@@ -302,5 +302,5 @@ function makeSketchSwitch() {
 		color : '#fff',
 		'font-weight' : 'normal',
 		opacity : '0.4'
-	}).text('Design Mode');
+	}).text('Graphic Mode');
 };
